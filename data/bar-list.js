@@ -398,6 +398,188 @@ const theRangerTavern = {
     favorite: false,
 };
 
+const pearlsRooftopBar = {
+    id: 'pearls-rooftop',
+    name: 'Pearl\'s Rooftop',
+    quadrant: 'Pearl',
+    district: 'Pear District',
+    address: '804 NW 12th Ave ,Portland OR',
+    dateNight: true,
+    beer: '$5 Pints',
+    food: '$7 Fries Special',
+    liquor: '$8 House Cocktail, $5 Wells',
+    time: '5:00 PM - 8:00 PM',
+    days: 'Mon - Fri',
+    favorite: false,
+};
+
+
+const blitzPearlBar = {
+    id: 'blitz-pearl-bar',
+    name: 'Blitz Pearl',
+    quadrant: 'Pearl',
+    district: 'Pear District',
+    address: '110 NW 10th Ave',
+    dateNight: true,
+    beer: '$1 off Pints',
+    food: '$3 App Special',
+    liquor: '$1 off House Cocktail, $4 Wells',
+    time: '9:00 PM - 11:59 PM',
+    days: 'Mon - Sun',
+    favorite: false,
+};
+
+
+const bridgeportBrewPubBar = {
+    id: 'bridgeport-brew-pub',
+    name: 'Bridgeport Brew Pub',
+    quadrant: 'Pearl',
+    district: 'Pear District',
+    address: '1313 NW Marshall St',
+    dateNight: true,
+    beer: '$3 Pints',
+    food: '$2.50 off Selected Apps',
+    liquor: '$4 Cocktails',
+    time: '4:00 PM - 6:00 PM',
+    days: 'Mon - Fri',
+    favorite: false,
+
+};
+
+const ciderBiteBar = {
+    id: 'cider-bite-bar',
+    name: 'Cider Bite',
+    quadrant: 'Pearl',
+    district: 'Pear District',
+    address: '1230 NW Hoyt St',
+    dateNight: true,
+    beer: '$1 off Pints',
+    food: '$3 App Special',
+    liquor: '$5 House Cocktail, $4 Wells',
+    time: '4:00 PM - 6:00 PM',
+    days: 'Thu-Sun',
+    favorite: false,
+
+};
+
+const lifeOfRileyBar = {
+    id: 'life-of-riley-bar',
+    name: 'Life of Riley',
+    quadrant: 'Pearl',
+    district: 'Pear District',
+    address: '300 Northwest 10th Avenue',
+    dateNight: true,
+    beer: '$1 off Pints',
+    food: '$4 Tofu Tacos Special',
+    liquor: '$1 off House Cocktail & Wells',
+    time: '4:00 PM - 7:00 PM',
+    days: 'Mon - Fri',
+    favorite: false,
+
+
+};
+
+const tiltBar = {
+    id: 'tilt-bar',
+    name: 'Tilt',
+    quadrant: 'Pearl',
+    district: 'Pear District',
+    address: '1355 NW Everett St',
+    dateNight: true,
+    beer: '$2 Pints',
+    food: 'no food specials',
+    liquor: '$5 House Cocktail, $4 Wells',
+    time: '3:00 PM - 7:00 PM',
+    days: 'Mon - Fri',
+    favorite: false,
+
+};
+
+
+
+const popeHouseBourbonLounge = {
+    id: 'pope-house-bar',
+    name: 'Pope House Bourbon Bar',
+    quadrant: 'nw',
+    district: 'NW Portland',
+    address: '2075 NW Glisan',
+    dateNight: true,
+    beer: '$6 Pints',
+    food: 'no food specials',
+    liquor: '$1 off Bourbon, Wells & Beers',
+    time: '4pm-7pm, (Sunday 4pm-12am)',
+    days: 'Tue - Sat',
+    favorite: false,
+
+};
+
+const soloClub = {
+    id: 'solo-club',
+    name: 'Solo Club',
+    quadrant: 'nw',
+    district: 'NW Portland',
+    address: '2110 NW Raleigh St',
+    dateNight: true,
+    beer: '$1 off Pints',
+    food: 'no food specials',
+    liquor: '$8 Wells',
+    time: '3:00 PM - 6:00 PM',
+    days: 'Mon - Sat (Sunday - All Day)',
+    favorite: false,
+
+};
+
+const stJack = {
+    id: 'st-jack-bar',
+    name: 'St. Jack',
+    quadrant: 'nw',
+    district: 'NW Portlandf',
+    address: '1610 NW 23rd',
+    dateNight: true,
+    beer: '$4 Pints',
+    food: 'no food specials',
+    liquor: '$8 House Cocktail, $4 Wells',
+    time: '4:00 PM - 6:00 PM',
+    days: 'Mon - Sun',
+    favorite: false,
+
+
+};
+
+const theFiresideBar = {
+    id: 'fireside-bar',
+    name: 'The Fireside',
+    quadrant: 'nw',
+    district: 'NW Portlandf',
+    address: '801 NW 23rd',
+    dateNight: true,
+    beer: '$6 Pints',
+    food: '$5 App Special',
+    liquor: '$5 House Cocktail, $4 Wells',
+    time: '3:00 PM - 7:00 PM',
+    days: 'Mon - Fri',
+    favorite: false,
+
+
+};
+const teardropLounge = {
+    id: 'teardrop-lounge',
+    name: 'Teardrop Lounge',
+    quadrant: 'nw',
+    district: 'NW Portlandf',
+    address: '1015 NW Everett St.',
+    dateNight: true,
+    beer: '$6 Pints',
+    food: 'no food specials',
+    liquor: '$5 Cocktail, $4 Wells',
+    time: '4:00 PM - 7:00 PM',
+    days: 'Mon - Fri',
+    favorite: false,
+
+
+};
+
+
 const AlbertaStreetPubBar = {
     id: 'albertastreetpub',
     name: 'Alberta Street Pub',
@@ -505,6 +687,17 @@ const listOfBars = [
     overEasyBar,
     stJohnsPubBar,
     theRangerTavern,
+    pearlsRooftopBar,
+    blitzPearlBar,
+    bridgeportBrewPubBar,
+    ciderBiteBar,
+    lifeOfRileyBar,
+    tiltBar,
+    popeHouseBourbonLounge,
+    soloClub,
+    stJack,
+    theFiresideBar,
+    teardropLounge,
     AlbertaStreetPubBar,
     TCOLearysBar,
     ciaVitoBar,
