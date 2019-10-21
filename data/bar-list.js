@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const aaltoLoungeBar = {
     id: 'aalto-lounge',
     name: 'Aalto Lounge',
@@ -282,31 +281,6 @@ const virginiaCafeBar = {
     favorite: false,
 };
 
-const listOfBars = [
-    aaltoLoungeBar,
-    sweetHereafterBar,
-    tripleNickelBar,
-    theLiquorStoreBar,
-    conquistadorLoungeBar,
-    goldDustMeridianBar,
-    backStageBar,
-    toffeeClubBar,
-    hawthorneHideawayBar,
-    neatBar,
-    olympiaProvisionsBar,
-    doubleBarrelBar,
-    northBar,
-    automaticBar,
-    bambooSushiBar,
-    kellsIrishPubBar,
-    punchBowlSocialBar,
-    barlowPDXBar,
-    virginiaCafeBar,
-
-];
-
-export default listOfBars;
-=======
 const theRamblerBar = {
     id: 'the-rambler',
     name: 'The Rambler',
@@ -424,6 +398,35 @@ const theRangerTavern = {
     favorite: false,
 };
 
-export const listOfBars = [theRamblerBar, interurbanBar, porQueNoBar, mississippiPizzaBar, libertyGlassBar, overEasyBar, stJohnsPubBar, theRangerTavern]; 
+const listOfBars = [
+    aaltoLoungeBar,
+    sweetHereafterBar,
+    tripleNickelBar,
+    theLiquorStoreBar,
+    conquistadorLoungeBar,
+    goldDustMeridianBar,
+    backStageBar,
+    toffeeClubBar,
+    hawthorneHideawayBar,
+    neatBar,
+    olympiaProvisionsBar,
+    doubleBarrelBar,
+    northBar,
+    automaticBar,
+    bambooSushiBar,
+    kellsIrishPubBar,
+    punchBowlSocialBar,
+    barlowPDXBar,
+    virginiaCafeBar,
+    theRamblerBar,
+    interurbanBar,
+    porQueNoBar,
+    mississippiPizzaBar,
+    libertyGlassBar,
+    overEasyBar,
+    stJohnsPubBar,
+    theRangerTavern
 
->>>>>>> c345fa99cef56d0ea67775a6c7c4c72dfc5b9437
+];
+
+export default listOfBars;
