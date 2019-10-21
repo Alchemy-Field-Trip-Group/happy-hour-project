@@ -398,6 +398,85 @@ const theRangerTavern = {
     favorite: false,
 };
 
+const AlbertaStreetPubBar = {
+    id: 'albertastreetpub',
+    name: 'Alberta Street Pub',
+    quadrant: 'North',
+    district: 'Alberta',
+    address: '1036 NE Alberta St',
+    dateNight: false,
+    beer: '$1 off all drafts',
+    food: '$2-$7 including small bits, burger, fish & chips, etc.',
+    liquor: '$1 off all wells',
+    time: '3:00 PM - 6:00 PM',
+    days: 'Everyday',
+    favorite: false,
+};
+
+const TCOLearysBar = {
+    id: 'tcoleary\'s',
+    name: 'T.C O\'Leary\'s',
+    quadrant: 'North',
+    district: 'Alberta',
+    address: '2926 NE Alberta St',
+    dateNight: true,
+    beer: '$1 off beer',
+    food: '$5 1/2 Order Fish and Chips, $6 Irish Smoked Salmon Board',
+    liquor: '$1 off wells',
+    time: '4:00 PM - 6:00 PM',
+    days: 'Mon - Fri',
+    favorite: false,
+    website: 'https://www.tcolearys.com/menu/'
+};
+
+const ciaVitoBar = {
+    id: 'cia-vito',
+    name: 'Cia Vito',
+    quadrant: 'North',
+    district: 'Alberta',
+    address: '2203 NE Alberta St',
+    dateNight: true,
+    beer: '$4.5 Pfriem Kölsch, Level IPA',
+    food: '$6 Beef and Pork Meatballs',
+    liquor: '',
+    time: '4:30-6:30p,',
+    days: 'Wed-Sun',
+    favorite: false,
+    website: 'http://ciaovito.net/menu/'
+};
+
+const radioRoomBar = {
+    id: 'radio-room',
+    name: 'Radio Room',
+    quadrant: 'North',
+    district: 'Alberta',
+    address: '1101 NE Alberta St',
+    dateNight: true,
+    beer: '$1 off all beer, $2 Rainier',
+    food: '$5 White Truffle Fries, $9 Johnny Royale Burger',
+    liquor: '$1 off all spitits',
+    time: '3:00-7:00pm & 10:00-2:00am',
+    days: 'Everyday',
+    favorite: false,
+    website: 'https://www.radioroompdx.com/'
+};
+
+const theKnockBackBar = {
+    id: 'the-knock-back',
+    name: 'The Knock Back',
+    quadrant: 'North',
+    district: 'Alberta',
+    address: '2315 NE Alberta St',
+    dateNight: true,
+    beer: '$1 off all beer',
+    food: '$4 "The OG Burger Slider", $8 Tempeh Reuben',
+    liquor: '$1 off all shots',
+    time: '4:00-6:00pm',
+    days: 'Everyday',
+    favorite: false,
+    website: 'http://www.theknockback.com/'
+};
+
 const listOfBars = [
     aaltoLoungeBar,
     sweetHereafterBar,
@@ -425,8 +504,12 @@ const listOfBars = [
     libertyGlassBar,
     overEasyBar,
     stJohnsPubBar,
-    theRangerTavern
-
+    theRangerTavern,
+    AlbertaStreetPubBar,
+    TCOLearysBar,
+    ciaVitoBar,
+    radioRoomBar,
+    theKnockBackBar
 ];
 
 export default listOfBars;
