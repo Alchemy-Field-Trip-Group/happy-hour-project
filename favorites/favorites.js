@@ -1,0 +1,1 @@
+let userPreference = document.getElementsByTagName('input'); 
