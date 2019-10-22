@@ -5,18 +5,9 @@ const beerCheck = document.getElementById('beer');
 const liquorCheck = document.getElementById('liquor'); 
 const dateCheck = document.getElementById('date'); 
 
-
+let checkedArray = []; 
 
 const preferenceArray = [foodCheck, beerCheck, liquorCheck, dateCheck];
-
-
-// checkedPreference.addEventListener('click', function(){
-
-
-  
- 
-
-
 
 
 function loadMap() {
@@ -28,15 +19,21 @@ document.getElementById('map-button').addEventListener('click', function(event) 
         let checkedPreference = preferenceArray[i];
         
         if (checkedPreference.checked){
-            console.log('yee'); 
+            checkedArray.push(checkedPreference.id); 
+            let stringifyCheckedPreference = JSON.stringify(checkedArray); 
+            localStorage.setItem('preference', stringifyCheckedPreference); 
         } 
-        else {
-            console.log('hmmm');
-        }
+        
     }  
+
     event.preventDefault(); 
     loadMap(); 
+    checkedArray = []; 
 }); 
+
+
+
+
 function loadFavorites() {
     window.location = '../favorites/favorites.html'; 
 }
