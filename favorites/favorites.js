@@ -64,12 +64,13 @@ parsedFavorites.forEach(bar => {
 
     
 
-})
+});
 
-// document.getElementById('reset-favorites-button').addEventListener(clearFavortesFunction);
+const clearFavoritesButton = document.getElementById('reset-favorites-button');
+
+clearFavoritesButton.addEventListener('click', () => {
+    localStorage.clear();
+});
 
 
-// const clearFavortesFunction = () => {
-//     localStorage.clear();
-// };
 
