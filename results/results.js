@@ -40,7 +40,7 @@ listOfBars.forEach(bar => {
     resultFood.id = `${thisBar.id}-food`;
 
     resultLiquor.textContent = thisBar.liquor;
-    resultLiquor.id = `${thisBar.id}-menu`;
+    resultLiquor.id = `${thisBar.id}-liquor`;
 
     addToFavoritesButton.textContent = 'Add to Favorites';
     addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;
@@ -53,9 +53,8 @@ listOfBars.forEach(bar => {
             favoritesArray.push(found);
             localStorage.setItem('favorites', JSON.stringify(favoritesArray));
         } else {
-            console.log('dont need to');
+            return;
         }
-        console.log(JSON.parse(localStorage.getItem('favorites')));
     });
     addToFavoritesButton.id = 'add-to-favorites';
 
