@@ -2,10 +2,10 @@ import { saveUser, loadUser } from './load-save-user.js';
 import { makeUser } from './makeuser.js';
 
 const form = document.querySelector('form');
-const login = document.getElementById('submit-button');
+const register = document.getElementById('register');
 let users = [];
 
-login.addEventListener('click', (event) => {
+register.addEventListener('click', (event) => {
     event.preventDefault();
 
     const formData = new FormData(form);
@@ -13,11 +13,17 @@ login.addEventListener('click', (event) => {
     const createdUser = makeUser(formData);
     
     const saved = saveUser(createdUser);
-    console.log(loadUser(saved));
-    for ( let i = 0; i < users.length; i++) {
-        
+    const load = loadUser(saved);
+    console.log(load);
+
+
+    for(let i = 0; i < users.length; i++) {
+        const userName = users[i];
+        if(load.username !== userName.username) {
+            users.push(load);
+            console.log(users);
+        } else {
+            return;
+        }
     }
-    users.push[];
-
 });
-
