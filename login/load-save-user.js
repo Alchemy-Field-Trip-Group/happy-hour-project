@@ -4,8 +4,9 @@ function saveUser(user) {
 }
 
 function loadUser() {
-    const user = localStorage.getItem('USER');
+    const user = localStorage.getItem('user');
     const parsed = JSON.parse(user);
+    return parsed;
 }
 
 export { saveUser, loadUser };

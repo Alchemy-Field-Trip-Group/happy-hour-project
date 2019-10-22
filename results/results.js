@@ -43,9 +43,6 @@ listOfBars.forEach(bar => {
     addToFavoritesButton.id = 'add-to-favorites';
 
     // addToFavoritesButton.addEventListener('click', function() {
-
-
-
     // }
 
     resultsUl.appendChild(resultLi);
