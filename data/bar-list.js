@@ -443,7 +443,6 @@ const bridgeportBrewPubBar = {
     time: '4:00 PM - 6:00 PM',
     days: 'Mon - Fri',
     favorite: false,
-
 };
 
 const ciderBiteBar = {
@@ -459,7 +458,6 @@ const ciderBiteBar = {
     time: '4:00 PM - 6:00 PM',
     days: 'Thu-Sun',
     favorite: false,
-
 };
 
 const lifeOfRileyBar = {
@@ -475,8 +473,6 @@ const lifeOfRileyBar = {
     time: '4:00 PM - 7:00 PM',
     days: 'Mon - Fri',
     favorite: false,
-
-
 };
 
 const tiltBar = {
@@ -492,7 +488,6 @@ const tiltBar = {
     time: '3:00 PM - 7:00 PM',
     days: 'Mon - Fri',
     favorite: false,
-
 };
 
 
@@ -510,7 +505,6 @@ const popeHouseBourbonLounge = {
     time: '4pm-7pm, (Sunday 4pm-12am)',
     days: 'Tue - Sat',
     favorite: false,
-
 };
 
 const soloClub = {
@@ -526,7 +520,6 @@ const soloClub = {
     time: '3:00 PM - 6:00 PM',
     days: 'Mon - Sat (Sunday - All Day)',
     favorite: false,
-
 };
 
 const stJack = {
@@ -542,8 +535,6 @@ const stJack = {
     time: '4:00 PM - 6:00 PM',
     days: 'Mon - Sun',
     favorite: false,
-
-
 };
 
 const theFiresideBar = {
@@ -559,9 +550,8 @@ const theFiresideBar = {
     time: '3:00 PM - 7:00 PM',
     days: 'Mon - Fri',
     favorite: false,
-
-
 };
+
 const teardropLounge = {
     id: 'teardrop-lounge',
     name: 'Teardrop Lounge',
@@ -575,10 +565,7 @@ const teardropLounge = {
     time: '4:00 PM - 7:00 PM',
     days: 'Mon - Fri',
     favorite: false,
-
-
 };
-
 
 const AlbertaStreetPubBar = {
     id: 'albertastreetpub',
