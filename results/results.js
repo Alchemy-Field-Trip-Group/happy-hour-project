@@ -1,6 +1,5 @@
 import listOfBars from '../data/bar-list.js';
-import { setFavorite, getFavorites, findById } from '../common/utils.js';
-
+import { findById } from '../common/utils.js';
 
 let favoritesArray = [];
 const resultsUl = document.getElementById('results-list');
@@ -45,6 +44,7 @@ listOfBars.forEach(bar => {
     addToFavoritesButton.textContent = 'Add to Favorites';
     addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;
 
+    addToFavoritesButton.id = 'add-to-favorites';
     addToFavoritesButton.addEventListener('click', function() {
        
        
@@ -56,10 +56,6 @@ listOfBars.forEach(bar => {
             return;
         }
     });
-    addToFavoritesButton.id = 'add-to-favorites';
-
-    // addToFavoritesButton.addEventListener('click', function() {
-    // }
 
     resultsUl.appendChild(resultLi);
     resultLi.appendChild(resultAddress);
