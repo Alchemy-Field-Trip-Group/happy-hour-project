@@ -30,7 +30,7 @@ parsedFavorites.forEach(bar => {
     favoriteLineItem.id = thisBar.id;
 
     favoriteAddress.textContent = thisBar.address;
-    favoriteAddress.textContent = `${thisBar.id}-address`;
+    favoriteAddress.id = `${thisBar.id}-address`;
 
     favoriteHours.textContent = `${thisBar.time} | `;
     favoriteHours.id = `${thisBar.id}-hours`;
@@ -41,13 +41,13 @@ parsedFavorites.forEach(bar => {
     favoriteMenu.id = `${thisBar.id}-menu`;
 
     favoriteBeer.textContent = thisBar.beer;
-    favoriteBeer.id = `${thisBar.berr}`;
+    favoriteBeer.id = `${thisBar.id}-beer`;
 
     favoriteFood.textContent = thisBar.food;
-    favoriteFood.id = `${thisBar}-food`;
+    favoriteFood.id = `${thisBar.id}-food`;
 
-    favoriteLiqour.textContent = thisBar.liqour;
-    favoriteLiqour.id = `${thisBar.id}-menu`;
+    favoriteLiqour.textContent = thisBar.liquor;
+    favoriteLiqour.id = `${thisBar.id}-liquor`;
 
 
 
