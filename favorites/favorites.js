@@ -69,7 +69,7 @@ parsedFavorites.forEach(bar => {
 const clearFavoritesButton = document.getElementById('reset-favorites-button');
 
 clearFavoritesButton.addEventListener('click', () => {
-    localStorage.clear();
+    localStorage.setItem('favorites', '');
 });
 
 
