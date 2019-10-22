@@ -43,6 +43,7 @@ listOfBars.forEach(bar => {
     resultLiquor.id = `${thisBar.id}-menu`;
 
     addToFavoritesButton.textContent = 'Add to Favorites';
+<<<<<<< HEAD
     addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;
 
     addToFavoritesButton.addEventListener('click', function() {
@@ -79,6 +80,12 @@ listOfBars.forEach(bar => {
         // console.log(getFavorites());
 
     });
+=======
+    addToFavoritesButton.id = 'add-to-favorites';
+
+    // addToFavoritesButton.addEventListener('click', function() {
+    // }
+>>>>>>> 7f99780072c6d20ed2d6c53263ec5232bc65535b
 
     resultsUl.appendChild(resultLi);
     resultLi.appendChild(resultAddress);
