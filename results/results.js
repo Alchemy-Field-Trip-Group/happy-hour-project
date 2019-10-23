@@ -59,7 +59,16 @@ console.log(userPreferenceFilteredArray);
 // console.log(chosenDistrictArray);
 
 
-let favoritesArray = [];
+
+let favoritesArray = localStorage.getItem('favorites');
+
+if(favoritesArray === null) {
+    favoritesArray = [];
+} else {
+    favoritesArray = JSON.parse(localStorage.getItem('favorites'));
+}
+console.log(favoritesArray)
+
 
 const resultsUl = document.getElementById('results-list');
 
@@ -105,7 +114,7 @@ listOfBars.forEach(bar => {
     addToFavoritesButton.id = 'add-to-favorites';
     addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;	
     addToFavoritesButton.addEventListener('click', function() {
-        
+
         if(!findById(favoritesArray, thisBar.id)) {	
             let found = findById(listOfBars, thisBar.id);
             favoritesArray.push(found);

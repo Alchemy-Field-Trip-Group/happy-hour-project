@@ -11,8 +11,9 @@ userGreetingSpan.textContent = generateUserName();
 
 debugger;
 
+console.log(parsedFavorites);
 
-if(!getItemsFromLocal) {
+if (parsedFavorites.length === 0) {
     noFavsMessage.textContent = 'You haven\'t Selected Any Items To Be In Favorites!';
 }
 
