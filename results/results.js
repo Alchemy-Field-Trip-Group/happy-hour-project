@@ -1,5 +1,41 @@
 import listOfBars from '../data/bar-list.js';
 import { setFavorite, getFavorites, findById } from '../common/utils.js';
+// import { districtArray } from '../data/districts.js'; 
+
+let userPreferences = JSON.parse(localStorage.getItem('preference')); 
+
+
+let userPreferenceFilteredArray = []; 
+let chosenDistrictArray = []; 
+
+
+for (let i = 0; i < userPreferences.length; i++) {
+    let filteredPreference = userPreferences[i];
+
+    listOfBars.forEach(bar => {
+        if (bar[filteredPreference]) {
+            userPreferenceFilteredArray.push(bar); 
+        }
+    }); 
+}
+
+// for (let i = 0; i < districtArray.length; i++) {
+//     let listedDistrict = districtArray[i];
+
+userPreferenceFilteredArray.forEach(bar => {
+    if (bar.district[radioButtonValue]) {
+        chosenDistrictArray.push(bar); 
+    }
+}); 
+
+console.log(chosenDistrictArray);
+
+// let newArray = []; 
+// coolArray.forEach(bar =>{
+//     if (bar[hawthorne]) {
+//         newArray.push(bar)
+//     }
+// })
 
 
 let favoritesArray = [];
@@ -43,26 +79,37 @@ listOfBars.forEach(bar => {
     resultLiquor.id = `${thisBar.id}-liquor`;
 
     addToFavoritesButton.textContent = 'Add to Favorites';
-    addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;
 
     addToFavoritesButton.addEventListener('click', function() {
        
        
-        if(!findById(favoritesArray, thisBar.id)) {
+
+        const isItIntheFavoritesArray = (bar) => {
+            
+            for (let i = 0; i < favoritesArray.length; i++) {
+                const barInArray = favoritesArray[i];
+                if (barInArray.id === bar.id) {
+                    return barInArray;
+                } else {
+                    return null;
+                }
+            }
+        };
+        const isItisIt = isItIntheFavoritesArray(thisBar);
+        if (favoritesArray.length === 0 || isItisIt === null) {
             let found = findById(listOfBars, thisBar.id);
             favoritesArray.push(found);
+            
             localStorage.setItem('favorites', JSON.stringify(favoritesArray));
         } else {
             return;
         }
     });
     addToFavoritesButton.id = 'add-to-favorites';
-
     // addToFavoritesButton.addEventListener('click', function() {
     // }
 
     resultsUl.appendChild(resultLi);
-    resultLi.appendChild(resultAddress);
     resultLi.appendChild(resultHours);
     resultHours.appendChild(resultDays);
     resultLi.appendChild(resultMenu);

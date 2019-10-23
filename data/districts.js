@@ -1,0 +1,1 @@
+const districtArray = ['Belmont', 'Hawthorne' 'pear district']
