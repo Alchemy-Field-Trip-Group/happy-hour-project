@@ -5,8 +5,10 @@ const noFavsMessage = document.getElementById('no-favorites-selected');
 // const userGreetingSpot = document.getElementById('fav-page-greeting');
 console.log(getItemsFromLocal);
 
+
+
+
 const parsedFavorites = JSON.parse(getItemsFromLocal);
-console.log(JSON.parse(getItemsFromLocal));
 
 
 if(!getItemsFromLocal) {
@@ -25,6 +27,8 @@ parsedFavorites.forEach(bar => {
     const favoriteBeer = document.createElement('li');
     const favoriteFood = document.createElement('li');
     const favoriteLiqour = document.createElement('li');
+    const removeFavoriteButton = document.createElement('button');
+    
     
     favoriteLineItem.textContent = thisBar.name;
     favoriteLineItem.id = thisBar.id;
@@ -49,6 +53,9 @@ parsedFavorites.forEach(bar => {
     favoriteLiqour.textContent = thisBar.liquor;
     favoriteLiqour.id = `${thisBar.id}-liquor`;
 
+    removeFavoriteButton.value = thisBar.id;
+    removeFavoriteButton.textContent = 'Remove Favorite';
+
 
 
     favoritesUl.appendChild(favoriteLineItem);
@@ -59,6 +66,7 @@ parsedFavorites.forEach(bar => {
     favoriteMenu.appendChild(favoriteBeer);
     favoriteMenu.appendChild(favoriteFood);
     favoriteMenu.appendChild(favoriteLiqour);
+    favoritesUl.appendChild(removeFavoriteButton);
  
  
 
@@ -69,8 +77,18 @@ parsedFavorites.forEach(bar => {
 const clearFavoritesButton = document.getElementById('reset-favorites-button');
 
 clearFavoritesButton.addEventListener('click', () => {
-    localStorage.setItem('favorites', '');
+    localStorage.removeItem(getItemsFromLocal);
 });
 
+
+const grabRemoveButton = document.querySelectorAll('button');
+
+grabRemoveButton.forEach((button, i) => {
+    button.addEventListener('click', () => {
+        const itemToRemove = i;
+        parsedFavorites.splice(itemToRemove, 1);
+        localStorage.setItem('favorites', JSON.stringify(parsedFavorites));
+    });
+});
 
 
