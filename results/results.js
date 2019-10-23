@@ -1,7 +1,6 @@
 import listOfBars from '../data/bar-list.js';
 import { findById } from '../common/utils.js';
 
-// import { districtArray } from '../data/districts.js'; 
 
 let userPreferences = JSON.parse(localStorage.getItem('preference'));
 
@@ -16,68 +15,14 @@ for (let i = 0; i < userPreferences.length; i++) {	//
     let filteredPreference = userPreferences[i];
 
     listOfBars.forEach(bar => {
+        // eslint-disable-next-line eqeqeq
         if (bar[filteredPreference] && userPreferenceFilteredArray.indexOf(bar) == -1) {
-                //if(jQuery.inArray(item, this) == -1) {
             userPreferenceFilteredArray.push(bar);
             return true;
         }
         return false;
     });
-            
-        
-           
-     
-         
 }
-
-console.log(userPreferenceFilteredArray);
-
-
-
-// function() {
-
-//     if (!findById(userPreferenceFilteredArray, bar[filteredPreference]) {	
-//         let found = findById(listOfBars, bar[filteredPreference]);
-//         favoritesArray.push(found);
-//         localStorage.setItem('favorites', JSON.stringify(favoritesArray));
-//     } else {
-//         return;		
-//     }	
-// });
-
-
-
-// userPreferenceFilteredArray.forEach(bar => {
-//     if (bar.district[userDistrict]) {
-//         chosenDistrictArray.push(bar); 
-//     }
-// }); 
-
-// console.log(userPreferenceFilteredArray); 
-
-// console.log(chosenDistrictArray);
-
-
-
-
-
-//     listOfBars.forEach(bar => {
-//         if (bar[filteredPreference]) {
-//             userPreferenceFilteredArray.push(bar);
-//         }
-//     });
-// }
-
-
-
-// userPreferenceFilteredArray.forEach(bar => {
-//     if (bar.district[radioButtonValue]) {
-//         chosenDistrictArray.push(bar); 
-//     }
-// }); 
-
-// console.log(chosenDistrictArray);
-
 
 
 let favoritesArray = localStorage.getItem('favorites');
@@ -87,7 +32,6 @@ if (favoritesArray === null) {
 } else {
     favoritesArray = JSON.parse(localStorage.getItem('favorites'));
 }
-// console.log(favoritesArray);
 
 
 const resultsUl = document.getElementById('results-list');
@@ -152,8 +96,7 @@ userPreferenceFilteredArray.forEach(bar => {
     resultHours.appendChild(resultDays);
     resultLi.appendChild(resultMenu);
 
-    console.log(resultLiquor.innerText);
-    if(resultLiquor.innerText) {
+    if (resultLiquor.innerText) {
         resultMenu.appendChild(resultLiquor);
     } 
 
@@ -161,7 +104,7 @@ userPreferenceFilteredArray.forEach(bar => {
         resultMenu.appendChild(resultBeer);
     }
 
-    if(resultFood.innerText) {
+    if (resultFood.innerText) {
         resultMenu.appendChild(resultFood);
     }
     
