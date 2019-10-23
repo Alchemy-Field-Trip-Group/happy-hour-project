@@ -1,43 +1,43 @@
 const hawethorneMap = {
     name: 'Hawthorne',
-    top: '50%',
-    left: '43%'
+    top: '56%',
+    left: '54%'
 };
 
 const belmontMap = {
     name: 'Belmont',
-    top: 'auto',
-    left: 'auto'
+    top: '54%',
+    left: '58%'
 };
 
 const divisionMap = {
     name: 'Division',
-    top: 'auto',
-    left: 'auto'
+    top: '59%',
+    left: '56%'
 };
 
 const albertaMap = {
     name: 'Alberta',
-    top: 'auto',
-    left: 'auto'
+    top: '41%',
+    left: '58%'
 };
 
 const stJohnsMap = {
     name: 'St Johns',
-    top: 'auto',
-    left: 'auto'
+    top: '25%',
+    left: '15%'
 };
 
 const nWMap = {
     name: 'NW Portland',
-    top: 'auto',
-    left: 'auto'
+    top: '48%',
+    left: '27%'
 };
 
 const pearlDistrictMap = {
     name: 'Pearl District',
-    top: 'auto',
-    left: 'auto'
+    top: '53%',
+    left: '33%'
 };
 
 const mapNames = [
