@@ -70,3 +70,11 @@ for(let i = 0; i < mapNames.length; i++) {
     console.log(item);
     figure.appendChild(item);
 }
+let selectedDistrict = document.querySelector('input:checked'); 
+
+let selectedDistrictValue = JSON.stringify(selectedDistrict.value); 
+
+localStorage.setItem('district', selectedDistrictValue); 
+
+
+console.log(selectedDistrict.value); 

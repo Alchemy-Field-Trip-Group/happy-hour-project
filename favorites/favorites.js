@@ -1,17 +1,19 @@
-// const removeFromFavoritesButton = document.getElementById('')
+import { generateUserName } from '../data/login.js';
+
 const favoritesUl = document.getElementById('user-favorites-list');
 const getItemsFromLocal = localStorage.getItem('favorites');
 const noFavsMessage = document.getElementById('no-favorites-selected');
-// const userGreetingSpot = document.getElementById('fav-page-greeting');
-console.log(getItemsFromLocal);
-
-
-
 
 const parsedFavorites = JSON.parse(getItemsFromLocal);
 
+const userGreetingSpan = document.getElementById('generate-username');
+userGreetingSpan.textContent = generateUserName();
 
-if(!getItemsFromLocal) {
+debugger;
+
+console.log(parsedFavorites);
+
+if (parsedFavorites.length === 0) {
     noFavsMessage.textContent = 'You haven\'t Selected Any Items To Be In Favorites!';
 }
 
@@ -68,9 +70,6 @@ parsedFavorites.forEach(bar => {
     favoriteMenu.appendChild(favoriteLiqour);
     favoritesUl.appendChild(removeFavoriteButton);
  
- 
-
-    
 
 });
 

@@ -5,13 +5,41 @@ import { findById } from '../common/utils.js';
 
 let userPreferences = JSON.parse(localStorage.getItem('preference')); 
 
+let userPreferences = JSON.parse(localStorage.getItem('preference'));
+// let userDistrict = JSON.parse(localStorage.getItem('district'));  
 
 let userPreferenceFilteredArray = []; 
-let chosenDistrictArray = []; 
+// let chosenDistrictArray = []; 
 
 
 // for (let i = 0; i < userPreferences.length; i++) {	//  
 //     let filteredPreference = userPreferences[i];
+
+    listOfBars.forEach(bar => {
+        if (bar[filteredPreference]) {
+            return; }
+           
+            userPreferenceFilteredArray.push(bar); 
+            
+        
+    } 
+});
+console.log(userPreferenceFilteredArray); 
+
+
+// userPreferenceFilteredArray.forEach(bar => {
+//     if (bar.district[userDistrict]) {
+//         chosenDistrictArray.push(bar); 
+//     }
+// }); 
+
+// console.log(userPreferenceFilteredArray); 
+
+// console.log(chosenDistrictArray);
+
+
+
+
 
 //     listOfBars.forEach(bar => {
 //         if (bar[filteredPreference]) {
@@ -20,8 +48,7 @@ let chosenDistrictArray = [];
 //     });
 // }
 
-// for (let i = 0; i < districtArray.length; i++) {
-//     let listedDistrict = districtArray[i];
+
 
 // userPreferenceFilteredArray.forEach(bar => {
 //     if (bar.district[radioButtonValue]) {
@@ -31,14 +58,17 @@ let chosenDistrictArray = [];
 
 // console.log(chosenDistrictArray);
 
-// let newArray = []; 
-// coolArray.forEach(bar =>{
-//     if (bar[hawthorne]) {
-//         newArray.push(bar)
-//     }
-// })
 
-let favoritesArray = [];
+
+let favoritesArray = localStorage.getItem('favorites');
+
+if(favoritesArray === null) {
+    favoritesArray = [];
+} else {
+    favoritesArray = JSON.parse(localStorage.getItem('favorites'));
+}
+console.log(favoritesArray)
+
 
 const resultsUl = document.getElementById('results-list');
 
@@ -84,7 +114,7 @@ listOfBars.forEach(bar => {
     addToFavoritesButton.id = 'add-to-favorites';
     addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;	
     addToFavoritesButton.addEventListener('click', function() {
-        
+
         if(!findById(favoritesArray, thisBar.id)) {	
             let found = findById(listOfBars, thisBar.id);
             favoritesArray.push(found);
