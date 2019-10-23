@@ -4,4 +4,8 @@ figure {
     width: 700px;
     height: 900px;
     margin: 0 auto;
+    color: white;
+}
+.maplink {
+    color: whitesmoke;
 }

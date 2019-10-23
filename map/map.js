@@ -1,10 +1,44 @@
-const hawethorneMap = 'Hawthorne';
-const belmontMap = 'Belmont';
-const divisionMap = 'Division';
-const albertaMap = 'Alberta';
-const stJohnsMap = 'St Johns';
-const nWMap = 'NW Portland';
-const pearlDistrictMap = 'Pearl District';
+const hawethorneMap = {
+    name: 'Hawthorne',
+    top: '50%',
+    left: '43%'
+};
+
+const belmontMap = {
+    name: 'Belmont',
+    top: 'auto',
+    left: 'auto'
+};
+
+const divisionMap = {
+    name: 'Division',
+    top: 'auto',
+    left: 'auto'
+};
+
+const albertaMap = {
+    name: 'Alberta',
+    top: 'auto',
+    left: 'auto'
+};
+
+const stJohnsMap = {
+    name: 'St Johns',
+    top: 'auto',
+    left: 'auto'
+};
+
+const nWMap = {
+    name: 'NW Portland',
+    top: 'auto',
+    left: 'auto'
+};
+
+const pearlDistrictMap = {
+    name: 'Pearl District',
+    top: 'auto',
+    left: 'auto'
+};
 
 const mapNames = [
     hawethorneMap,
@@ -15,3 +49,24 @@ const mapNames = [
     nWMap,
     pearlDistrictMap
 ];
+
+function generateLink(district) {
+    let link = document.createElement('a');
+    link.classList.add('maplink');
+
+    link.href = '../results/?id=' + district.name;
+
+    link.style.top = district.top;
+    link.style.left = district.left;
+    link.textContent = district.name;
+
+    return link;
+}
+
+const figure = document.querySelector('figure');
+
+for(let i = 0; i < mapNames.length; i++) {
+    let item = generateLink(mapNames[i]);
+    console.log(item);
+    figure.appendChild(item);
+}
