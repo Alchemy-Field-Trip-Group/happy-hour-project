@@ -19,3 +19,13 @@ logInButton.addEventListener('click', (event) => {
     
     window.location = '/map/map.html';
 });
+
+
+export const generateUserName = () => {
+    const userNameDisplay = JSON.parse(localStorage.getItem('username'));
+    return userNameDisplay;
+    
+};
+
+// export default generateUserName;
+
