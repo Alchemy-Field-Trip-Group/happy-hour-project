@@ -72,13 +72,18 @@ function generateLink(district) {
 
 const figure = document.querySelector('figure');
 
-for(let i = 0; i < mapNames.length; i++) {
-
+for (let i = 0; i < mapNames.length; i++) {
     let item = generateLink(mapNames[i]);
     console.log(item);
     figure.appendChild(item);
 
 }
+
+
+
+
+
+
 let selectedDistrict = document.querySelector('input:checked'); 
 
 let selectedDistrictValue = JSON.stringify(selectedDistrict.value); 

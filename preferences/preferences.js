@@ -1,5 +1,3 @@
-import barsList from '../data/bar-list.js'; 
-
 const foodCheck = document.getElementById('food'); 
 const beerCheck = document.getElementById('beer'); 
 const liquorCheck = document.getElementById('liquor'); 
