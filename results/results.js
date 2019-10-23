@@ -1,6 +1,6 @@
 import listOfBars from '../data/bar-list.js';
 import { findById } from '../common/utils.js';
-import { setFavorite, getFavorites, findById } from '../common/utils.js';
+
 // import { districtArray } from '../data/districts.js'; 
 
 let userPreferences = JSON.parse(localStorage.getItem('preference')); 
