@@ -1,13 +1,11 @@
 import listOfBars from '../data/bar-list.js';
-import { findById } from '../common/utils.js';
-import { setFavorite, getFavorites, findById } from '../common/utils.js';
-// import { districtArray } from '../data/districts.js'; 
+// import { setFavorite, getFavorites, findById } from '../common/utils.js';
 
-let userPreferences = JSON.parse(localStorage.getItem('preference')); 
-
+let userPreferences = JSON.parse(localStorage.getItem('preference'));
+// let userDistrict = JSON.parse(localStorage.getItem('district'));  
 
 let userPreferenceFilteredArray = []; 
-let chosenDistrictArray = []; 
+// let chosenDistrictArray = []; 
 
 
 for (let i = 0; i < userPreferences.length; i++) {
@@ -15,28 +13,34 @@ for (let i = 0; i < userPreferences.length; i++) {
 
     listOfBars.forEach(bar => {
         if (bar[filteredPreference]) {
+            return; }
+           
             userPreferenceFilteredArray.push(bar); 
-        }
-    }); 
-}
+            
+        
+    } 
+});
+console.log(userPreferenceFilteredArray); 
 
-// for (let i = 0; i < districtArray.length; i++) {
-//     let listedDistrict = districtArray[i];
 
-userPreferenceFilteredArray.forEach(bar => {
-    if (bar.district[radioButtonValue]) {
-        chosenDistrictArray.push(bar); 
-    }
-}); 
-
-console.log(chosenDistrictArray);
-
-// let newArray = []; 
-// coolArray.forEach(bar =>{
-//     if (bar[hawthorne]) {
-//         newArray.push(bar)
+// userPreferenceFilteredArray.forEach(bar => {
+//     if (bar.district[userDistrict]) {
+//         chosenDistrictArray.push(bar); 
 //     }
-// })
+// }); 
+
+// console.log(userPreferenceFilteredArray); 
+
+// console.log(chosenDistrictArray);
+
+
+
+
+
+
+
+
+
 
 
 let favoritesArray = [];
