@@ -612,6 +612,7 @@ const ciaVitoBar = {
     days: 'Wed-Sun',
     favorite: false,
     website: 'http://ciaovito.net/menu/'
+    
 };
 
 const radioRoomBar = {
