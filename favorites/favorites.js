@@ -88,6 +88,7 @@ grabRemoveButton.forEach((button, i) => {
         const itemToRemove = i;
         parsedFavorites.splice(itemToRemove, 1);
         localStorage.setItem('favorites', JSON.stringify(parsedFavorites));
+        location.reload();
     });
 });
 
