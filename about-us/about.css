@@ -1,0 +1,8 @@
+.team-list {
+    display: flex;
+    width: 960px;
+}
+
+.team-list li {
+    list-style-type: none;
+}
