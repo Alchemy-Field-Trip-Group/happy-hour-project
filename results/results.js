@@ -10,7 +10,15 @@ let userPreferenceFilteredArray = [];
 let chosenDistrictArray = []; 
 
 
-//  
+// for (let i = 0; i < userPreferences.length; i++) {	//  
+//     let filteredPreference = userPreferences[i];
+
+//     listOfBars.forEach(bar => {
+//         if (bar[filteredPreference]) {
+//             userPreferenceFilteredArray.push(bar);
+//         }
+//     });
+// }
 
 // for (let i = 0; i < districtArray.length; i++) {
 //     let listedDistrict = districtArray[i];
@@ -21,7 +29,7 @@ let chosenDistrictArray = [];
 //     }
 // }); 
 
-
+// console.log(chosenDistrictArray);
 
 // let newArray = []; 
 // coolArray.forEach(bar =>{
