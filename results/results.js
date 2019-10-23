@@ -76,7 +76,7 @@ listOfBars.forEach(bar => {
     resultFood.id = `${thisBar.id}-food`;
 
     resultLiquor.textContent = thisBar.liquor;
-    resultLiquor.id = `${thisBar.id}-menu`;
+    resultLiquor.id = `${thisBar.id}-liquor`;
 
     addToFavoritesButton.textContent = 'Add to Favorites';
 
@@ -102,17 +102,8 @@ listOfBars.forEach(bar => {
             
             localStorage.setItem('favorites', JSON.stringify(favoritesArray));
         } else {
-            
+            return;
         }
-
-        console.log(favoritesArray);
-        
-        
-        
-
-        // setFavorite(thisBar);
-        // console.log(getFavorites());
-
     });
     addToFavoritesButton.id = 'add-to-favorites';
     // addToFavoritesButton.addEventListener('click', function() {
