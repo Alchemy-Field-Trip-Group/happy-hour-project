@@ -82,34 +82,20 @@ listOfBars.forEach(bar => {
     addToFavoritesButton.textContent = 'Add to Favorites';
 
     addToFavoritesButton.id = 'add-to-favorites';
+    addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;	
     addToFavoritesButton.addEventListener('click', function() {
-       
-       
-
-        const isItIntheFavoritesArray = (bar) => {
-            
-            for (let i = 0; i < favoritesArray.length; i++) {
-                const barInArray = favoritesArray[i];
-                if (barInArray.id === bar.id) {
-                    return barInArray;
-                } else {
-                    return null;
-                }
-            }
-        };
-        const isItisIt = isItIntheFavoritesArray(thisBar);
-        if (favoritesArray.length === 0 || isItisIt === null) {
+        if(!findById(favoritesArray, thisBar.id)) {	
             let found = findById(listOfBars, thisBar.id);
-            favoritesArray.push(found);
-            
-            localStorage.setItem('favorites', JSON.stringify(favoritesArray));
+            favoritesArray.push(found);		
+            localStorage.setItem('favorites', JSON.stringify(favoritesArray));	
         } else {
-            return;
-        }
+            return;		
+        }	
     });
     addToFavoritesButton.id = 'add-to-favorites';
 
     resultsUl.appendChild(resultLi);
+    resultLi.appendChild(resultAddress);	
     resultLi.appendChild(resultHours);
     resultHours.appendChild(resultDays);
     resultLi.appendChild(resultMenu);
