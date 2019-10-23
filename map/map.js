@@ -15,3 +15,12 @@ const mapNames = [
     nWMap,
     pearlDistrictMap
 ];
+
+let selectedDistrict = document.querySelector('input:checked'); 
+
+let selectedDistrictValue = JSON.stringify(selectedDistrict.value); 
+
+localStorage.setItem('district', selectedDistrictValue); 
+
+
+console.log(selectedDistrict.value); 
