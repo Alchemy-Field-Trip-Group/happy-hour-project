@@ -1,6 +1,7 @@
 import listOfBars from '../data/bar-list.js';
 import { findById } from '../common/utils.js';
 
+// import { districtArray } from '../data/districts.js'; 
 
 let userPreferences = JSON.parse(localStorage.getItem('preference'));
 
@@ -150,8 +151,19 @@ userPreferenceFilteredArray.forEach(bar => {
     resultLi.appendChild(resultHours);
     resultHours.appendChild(resultDays);
     resultLi.appendChild(resultMenu);
-    resultMenu.appendChild(resultBeer);
-    resultMenu.appendChild(resultFood);
-    resultMenu.appendChild(resultLiquor);
+
+    console.log(resultLiquor.innerText);
+    if(resultLiquor.innerText) {
+        resultMenu.appendChild(resultLiquor);
+    } 
+
+    if (resultBeer.innerText) {
+        resultMenu.appendChild(resultBeer);
+    }
+
+    if(resultFood.innerText) {
+        resultMenu.appendChild(resultFood);
+    }
+    
     resultLi.appendChild(addToFavoritesButton);
 });
