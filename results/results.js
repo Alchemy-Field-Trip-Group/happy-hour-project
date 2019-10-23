@@ -3,8 +3,6 @@ import { findById } from '../common/utils.js';
 
 // import { districtArray } from '../data/districts.js'; 
 
-let userPreferences = JSON.parse(localStorage.getItem('preference')); 
-
 let userPreferences = JSON.parse(localStorage.getItem('preference'));
 // let userDistrict = JSON.parse(localStorage.getItem('district'));  
 
@@ -15,16 +13,16 @@ let userPreferenceFilteredArray = [];
 // for (let i = 0; i < userPreferences.length; i++) {	//  
 //     let filteredPreference = userPreferences[i];
 
-    listOfBars.forEach(bar => {
-        if (bar[filteredPreference]) {
-            return; }
+//     listOfBars.forEach(bar => {
+//         if (bar[filteredPreference]) {
+//             return; }
            
-            userPreferenceFilteredArray.push(bar); 
+//             userPreferenceFilteredArray.push(bar); 
             
         
-    } 
-});
-console.log(userPreferenceFilteredArray); 
+//     } 
+// });
+// console.log(userPreferenceFilteredArray); 
 
 
 // userPreferenceFilteredArray.forEach(bar => {
@@ -130,8 +128,19 @@ listOfBars.forEach(bar => {
     resultLi.appendChild(resultHours);
     resultHours.appendChild(resultDays);
     resultLi.appendChild(resultMenu);
-    resultMenu.appendChild(resultBeer);
-    resultMenu.appendChild(resultFood);
-    resultMenu.appendChild(resultLiquor);
+
+    console.log(resultLiquor.innerText);
+    if(resultLiquor.innerText) {
+        resultMenu.appendChild(resultLiquor);
+    } 
+
+    if (resultBeer.innerText) {
+        resultMenu.appendChild(resultBeer);
+    }
+
+    if(resultFood.innerText) {
+        resultMenu.appendChild(resultFood);
+    }
+    
     resultLi.appendChild(addToFavoritesButton);
 });
