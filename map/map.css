@@ -5,7 +5,9 @@ figure {
     height: 900px;
     margin: 0 auto;
     color: white;
+    position: relative;
 }
 .maplink {
     color: whitesmoke;
+    position: absolute;
 }
