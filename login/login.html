@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Portland Happy Hour</title>
+    <title>Document</title>
+    <link href='./login.css' rel='stylesheet'>
 </head>
-
-<body>
 <body>
     <header>
         <h1>Portland Happy Hour</h1>
@@ -19,18 +16,16 @@
         <form id='login'>
             <label>
                 <span>Username:</span>
-                <input type='text' id='username' name='username'>
+                <input type='text' id='username' name='username' required>
             </label>
             <label>
                 <span>Password:</span>
-                <input type='password' id='password' name='password'>
+                <input type='password' id='password' name='password' required>
             </label>
+            <button type='submit' id='register'>Register</button>
             <button type='submit' id='login-button'>Login</button>
         </form>
     </main>
-    <p><a href="about-us">About the Team</a></p>
-    <script src='/data/login.js' type='module'></script>
-    <script type="module" src="app.js"></script>
+    <script src='login.js' type='module'></script>
 </body>
-
 </html>

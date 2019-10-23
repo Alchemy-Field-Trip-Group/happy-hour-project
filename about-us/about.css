@@ -1,0 +1,14 @@
+.team-list {
+    display: flex;
+    width: 960px;
+}
+
+.team-list li {
+    list-style-type: none;
+    padding: 0 15px;
+}
+
+.team-list li img {
+    width: 200px;
+    border-radius: 100px;
+}

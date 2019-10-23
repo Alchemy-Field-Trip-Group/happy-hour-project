@@ -1,0 +1,7 @@
+ul#results-list li {
+    margin-bottom: 15px;
+}
+
+ul#results-list li ul {
+    margin-top: 10px;
+}
