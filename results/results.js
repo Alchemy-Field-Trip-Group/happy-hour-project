@@ -10,26 +10,18 @@ let userPreferenceFilteredArray = [];
 let chosenDistrictArray = []; 
 
 
-for (let i = 0; i < userPreferences.length; i++) {
-    let filteredPreference = userPreferences[i];
-
-    listOfBars.forEach(bar => {
-        if (bar[filteredPreference]) {
-            userPreferenceFilteredArray.push(bar); 
-        }
-    }); 
-}
+//  
 
 // for (let i = 0; i < districtArray.length; i++) {
 //     let listedDistrict = districtArray[i];
 
-userPreferenceFilteredArray.forEach(bar => {
-    if (bar.district[radioButtonValue]) {
-        chosenDistrictArray.push(bar); 
-    }
-}); 
+// userPreferenceFilteredArray.forEach(bar => {
+//     if (bar.district[radioButtonValue]) {
+//         chosenDistrictArray.push(bar); 
+//     }
+// }); 
 
-console.log(chosenDistrictArray);
+
 
 // let newArray = []; 
 // coolArray.forEach(bar =>{
@@ -38,8 +30,8 @@ console.log(chosenDistrictArray);
 //     }
 // })
 
-
 let favoritesArray = [];
+
 const resultsUl = document.getElementById('results-list');
 
 listOfBars.forEach(bar => {
@@ -84,10 +76,11 @@ listOfBars.forEach(bar => {
     addToFavoritesButton.id = 'add-to-favorites';
     addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;	
     addToFavoritesButton.addEventListener('click', function() {
+        
         if(!findById(favoritesArray, thisBar.id)) {	
             let found = findById(listOfBars, thisBar.id);
-            favoritesArray.push(found);		
-            localStorage.setItem('favorites', JSON.stringify(favoritesArray));	
+            favoritesArray.push(found);
+            localStorage.setItem('favorites', JSON.stringify(favoritesArray));
         } else {
             return;		
         }	
