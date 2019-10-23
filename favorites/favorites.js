@@ -1,4 +1,4 @@
-import { generateUserName } from '../data/login.js';
+import { generateUserName } from '../common/utils.js';
 
 const favoritesUl = document.getElementById('user-favorites-list');
 const getItemsFromLocal = localStorage.getItem('favorites');
@@ -9,7 +9,7 @@ const parsedFavorites = JSON.parse(getItemsFromLocal);
 const userGreetingSpan = document.getElementById('generate-username');
 userGreetingSpan.textContent = generateUserName();
 
-debugger;
+
 
 
 if(!getItemsFromLocal) {
