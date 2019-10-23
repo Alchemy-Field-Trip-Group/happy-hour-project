@@ -74,11 +74,7 @@ parsedFavorites.forEach(bar => {
 
 });
 
-const clearFavoritesButton = document.getElementById('reset-favorites-button');
 
-clearFavoritesButton.addEventListener('click', () => {
-    localStorage.removeItem(getItemsFromLocal);
-});
 
 
 const grabRemoveButton = document.querySelectorAll('button');
