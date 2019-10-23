@@ -3,15 +3,14 @@ const favoritesUl = document.getElementById('user-favorites-list');
 const getItemsFromLocal = localStorage.getItem('favorites');
 const noFavsMessage = document.getElementById('no-favorites-selected');
 // const userGreetingSpot = document.getElementById('fav-page-greeting');
-console.log(getItemsFromLocal);
-
 
 
 
 const parsedFavorites = JSON.parse(getItemsFromLocal);
 
+console.log(parsedFavorites);
 
-if(!getItemsFromLocal) {
+if (parsedFavorites.length === 0) {
     noFavsMessage.textContent = 'You haven\'t Selected Any Items To Be In Favorites!';
 }
 
