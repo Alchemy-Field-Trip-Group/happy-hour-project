@@ -1,6 +1,12 @@
 import listOfBars from '../data/bar-list.js';
 import { findById } from '../common/utils.js';
 
+const searchParams = new URLSearchParams(window.location.search);
+
+let districtResultPage = searchParams.get('id'); 
+console.log(districtResultPage);
+
+
 
 let userPreferences = JSON.parse(localStorage.getItem('preference'));
 
@@ -9,6 +15,8 @@ let userPreferences = JSON.parse(localStorage.getItem('preference'));
 
 let userPreferenceFilteredArray = []; 
 // let chosenDistrictArray = []; 
+
+let arrayToDisplay = []; 
 
 
 for (let i = 0; i < userPreferences.length; i++) {	//  
@@ -23,6 +31,17 @@ for (let i = 0; i < userPreferences.length; i++) {	//
         return false;
     });
 }
+
+let barsToFilterByDistrict = []; 
+for (let i = 0; i < userPreferenceFilteredArray.length; i++) {	 
+    let barsToFilterByDistrict = userPreferenceFilteredArray[i];
+    barsToFilterByDistrict.forEach(bar => {
+        if (bar.district.searchParams){
+            arrayToDisplay.push(barsToFilterByDistrict);
+        }
+    }); 
+}
+console.log(arrayToDisplay);
 
 
 let favoritesArray = localStorage.getItem('favorites');
