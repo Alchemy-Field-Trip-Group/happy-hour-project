@@ -15,3 +15,9 @@ export function makeUser(formData) {
     };
     return user;
 }
+
+export const generateUserName = () => {
+    const userNameDisplay = localStorage.getItem('username');
+    return userNameDisplay;
+    
+};
