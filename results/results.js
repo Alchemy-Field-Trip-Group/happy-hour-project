@@ -4,8 +4,6 @@ import { findById } from '../common/utils.js';
 // import { districtArray } from '../data/districts.js'; 
 
 let userPreferences = JSON.parse(localStorage.getItem('preference')); 
-
-let userPreferences = JSON.parse(localStorage.getItem('preference'));
 // let userDistrict = JSON.parse(localStorage.getItem('district'));  
 
 let userPreferenceFilteredArray = []; 
@@ -15,14 +13,12 @@ let userPreferenceFilteredArray = [];
 // for (let i = 0; i < userPreferences.length; i++) {	//  
 //     let filteredPreference = userPreferences[i];
 
-    listOfBars.forEach(bar => {
-        if (bar[filteredPreference]) {
-            return; }
-           
-            userPreferenceFilteredArray.push(bar); 
-            
-        
-    } 
+listOfBars.forEach(bar => {
+    if(bar[filteredPreference]) {
+        return; 
+    } else {
+        userPreferenceFilteredArray.push(bar); 
+    }  
 });
 console.log(userPreferenceFilteredArray); 
 
@@ -67,7 +63,7 @@ if(favoritesArray === null) {
 } else {
     favoritesArray = JSON.parse(localStorage.getItem('favorites'));
 }
-console.log(favoritesArray)
+console.log(favoritesArray);
 
 
 const resultsUl = document.getElementById('results-list');

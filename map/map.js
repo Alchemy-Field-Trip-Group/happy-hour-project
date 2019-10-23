@@ -40,6 +40,12 @@ const pearlDistrictMap = {
     left: '33%'
 };
 
+const mississippi = {
+    name: 'Mississippi',
+    top: '37%',
+    left: '38%'
+};
+
 const mapNames = [
     hawethorneMap,
     belmontMap, 
@@ -47,7 +53,8 @@ const mapNames = [
     albertaMap,
     stJohnsMap,
     nWMap,
-    pearlDistrictMap
+    pearlDistrictMap,
+    mississippi
 ];
 
 function generateLink(district) {
@@ -66,9 +73,11 @@ function generateLink(district) {
 const figure = document.querySelector('figure');
 
 for(let i = 0; i < mapNames.length; i++) {
+
     let item = generateLink(mapNames[i]);
     console.log(item);
     figure.appendChild(item);
+
 }
 let selectedDistrict = document.querySelector('input:checked'); 
 
