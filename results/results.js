@@ -25,15 +25,18 @@ for (let i = 0; i < userPreferences.length; i++) {	//
     });
 }
 
+
+
+
 userPreferenceFilteredArray.forEach(bar => {
-    if (bar.district === districtId) {
+    if(bar.district === districtId) {
         arrayToDisplay.push(bar);
     }
 });
 
 let favoritesArray = localStorage.getItem('favorites');
 
-if (favoritesArray === null) {
+if(favoritesArray === null) {
     favoritesArray = [];
 } else {
     favoritesArray = JSON.parse(localStorage.getItem('favorites'));
@@ -77,6 +80,12 @@ arrayToDisplay.forEach(bar => {
     const resultLiquor = document.createElement('li');
     const addToFavoritesButton = document.createElement('button');
    
+    const favoritable = {
+        beer: resultBeer,
+        food: resultFood,
+        liquor: resultLiquor
+
+    };
     
 
     resultLi.textContent = thisBar.name;
@@ -95,11 +104,13 @@ arrayToDisplay.forEach(bar => {
 
     resultBeer.textContent = thisBar.beer;
     resultBeer.id = `${thisBar.id}-beer`;
-
+    
     resultFood.textContent = thisBar.food;
+    // resultFood.classList.add('food');
     resultFood.id = `${thisBar.id}-food`;
 
     resultLiquor.textContent = thisBar.liquor;
+    // resultLiquor.classList.add('liquor');
     resultLiquor.id = `${thisBar.id}-liquor`;
 
     addToFavoritesButton.textContent = 'Add to Favorites';
@@ -108,7 +119,7 @@ arrayToDisplay.forEach(bar => {
     addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;	
     addToFavoritesButton.addEventListener('click', function() {
 
-        if (!findById(favoritesArray, thisBar.id)) {	
+        if(!findById(favoritesArray, thisBar.id)) {	
             let found = findById(listOfBars, thisBar.id);
             thisBar.favorite = true;
             favoritesArray.push(found);
@@ -119,6 +130,19 @@ arrayToDisplay.forEach(bar => {
     });
 
 
+    for(let i = 0; i < userPreferences.length; i++) {
+        let boldedPreference = userPreferences[i];
+
+        if(favoritable[boldedPreference]){
+            favoritable[boldedPreference].classList.add('favorite');
+        } else if(!favoritable[boldedPreference]) {
+            favoritable[boldedPreference].style.display = 'none';
+
+        }
+        console.log(boldedPreference);
+    }
+
+
     addToFavoritesButton.id = 'add-to-favorites';
 
     resultsUl.appendChild(resultLi);
@@ -127,15 +151,15 @@ arrayToDisplay.forEach(bar => {
     resultHours.appendChild(resultDays);
     resultLi.appendChild(resultMenu);
 
-    if (resultLiquor.innerText) {
+    if(resultLiquor.innerText) {
         resultMenu.appendChild(resultLiquor);
     } 
 
-    if (resultBeer.innerText) {
+    if(resultBeer.innerText) {
         resultMenu.appendChild(resultBeer);
     }
 
-    if (resultFood.innerText) {
+    if(resultFood.innerText) {
         resultMenu.appendChild(resultFood);
     }
     

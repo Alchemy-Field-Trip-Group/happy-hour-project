@@ -15,7 +15,9 @@ ul#results-list li ul {
     margin-top: 10px;
 }
 
-  
+.favorite {
+    color: red;
+}
   
   html {
       background-color: fffd48;
