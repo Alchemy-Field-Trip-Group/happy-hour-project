@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Playlist Script";
+  src: url("./assets/Playlist-Script.otf") format("opentype");
+}
+/* 
+body {
+    height: 100vh;
+    background-color:#fffd48;
+    font-family: "Roboto";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
