@@ -1,7 +1,9 @@
+
+
 const hawethorneMap = {
     name: 'Hawthorne',
     top: '56%',
-    left: '54%'
+    left: '54%',
 };
 
 const belmontMap = {
@@ -40,25 +42,42 @@ const pearlDistrictMap = {
     left: '33%'
 };
 
-const mapNames = [
+const mississippi = {
+    name: 'Mississippi',
+    top: '37%',
+    left: '38%'
+};
+
+export const mapNames = [
     hawethorneMap,
     belmontMap, 
     divisionMap,
     albertaMap,
     stJohnsMap,
     nWMap,
-    pearlDistrictMap
+    pearlDistrictMap,
+    mississippi
 ];
+
 
 function generateLink(district) {
     let link = document.createElement('a');
+
+    const img = document.createElement('img');
+     
     link.classList.add('maplink');
 
     link.href = '../results/?id=' + district.name;
 
     link.style.top = district.top;
     link.style.left = district.left;
-    link.textContent = district.name;
+    // link.textContent = 
+    // district.name;
+
+
+    img.setAttribute('src', '../assets/street_images/' + district.name + '.jpg'); 
+    link.appendChild(img); 
+
 
     return link;
 }
@@ -67,20 +86,33 @@ const figure = document.querySelector('figure');
 
 for (let i = 0; i < mapNames.length; i++) {
     let item = generateLink(mapNames[i]);
-    console.log(item);
     figure.appendChild(item);
+
 }
 
 
 
+let sendIt = () => {
+    let selectedDistrict = document.querySelector('input:checked'); 
+
+    let selectedDistrictValue = JSON.stringify(selectedDistrict.value); 
+
+    localStorage.setItem('district', selectedDistrictValue); 
+
+};
+
+sendIt(); 
 
 
 
-let selectedDistrict = document.querySelector('input:checked'); 
+function loadUserPreferecePage() {
+    window.location = '../preferences/preferences.html'; 
+}
 
-let selectedDistrictValue = JSON.stringify(selectedDistrict.value); 
+document.getElementById('preferences-button').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    loadUserPreferecePage();
+}); 
 
-localStorage.setItem('district', selectedDistrictValue); 
 
 
-console.log(selectedDistrict.value); 

@@ -13,7 +13,7 @@ userGreetingSpan.textContent = generateUserName();
 
 console.log(parsedFavorites);
 
-if (parsedFavorites.length === 0) {
+if(parsedFavorites.length === 0) {
     noFavsMessage.textContent = 'You haven\'t Selected Any Items To Be In Favorites!';
 }
 
@@ -22,6 +22,7 @@ parsedFavorites.forEach(bar => {
     let thisBar = bar;
 
     const favoriteLineItem = document.createElement('li');
+    const favoriteDistrict = document.createElement('p');
     const favoriteAddress = document.createElement('p');
     const favoriteHours = document.createElement('span');
     const favoriteDays = document.createElement('span');
@@ -34,6 +35,9 @@ parsedFavorites.forEach(bar => {
     
     favoriteLineItem.textContent = thisBar.name;
     favoriteLineItem.id = thisBar.id;
+
+    favoriteDistrict.textContent = thisBar.district;
+    favoriteDistrict.id = `${thisBar.id}-district`;
 
     favoriteAddress.textContent = thisBar.address;
     favoriteAddress.id = `${thisBar.id}-address`;
@@ -61,6 +65,7 @@ parsedFavorites.forEach(bar => {
 
 
     favoritesUl.appendChild(favoriteLineItem);
+    favoriteLineItem.appendChild(favoriteDistrict);
     favoriteLineItem.appendChild(favoriteAddress);
     favoriteLineItem.appendChild(favoriteHours);
     favoriteHours.appendChild(favoriteDays);

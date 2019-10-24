@@ -1,39 +1,12 @@
 @font-face {
     font-family: "Playlist Script";
     src: url("./assets/Playlist-Script.otf") format("opentype");
-  }
-
-  img{
-    width: 90vw;
-    height: auto;  
 }
 
-ul#results-list {
-    padding: 25px;
-}
-ul#results-list li {
-    margin-bottom: 25px;
-}
 
-ul#results-list ul li {
-    margin-bottom: 25px;
-}
-
-ul {
-    margin-top: 10px;
-    padding-left: 0;
-}
-.favorite {
-    color: red;
-}
-  
 html {
     background-color: fffd48;
     height: 100%;
-}
-
-.results-section {
-    padding-bottom: 100px;
 }
 
 body {
@@ -45,6 +18,7 @@ body {
     font-weight: 500;
     background-color:#fffd48;
     height: 100%;
+    padding-bottom:60px; 
 }
 
 main {
@@ -59,10 +33,17 @@ main {
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    background: rgba(255, 253, 72, 1);
+font-family: "Roboto";
+position: fixed;
+bottom: 0;
+width: 100vw;
+background: rgba(255, 253, 72, 1);
+}
+
+#nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
   
 a {
@@ -94,46 +75,47 @@ button {
       font-size: 17px;
       text-transform: uppercase;
       padding: 5px 10px;
-      width: 200px;
+      width: 150px;
       box-shadow: 0px 3px 1px #aaaa;
-  }
+}
   
 input {
       display: flex;
       margin-bottom: 10px;
       width: 250px;
-  }
+}
   
   label span {
       margin-bottom: 5px;
       display: inline-block;
-  }
+}
 
   
 .header-background h1 {
-    
-      margin-top: 100px;
+    margin-top: 100px;
   }
   
 .hr-in-logo {
-    
-      font-family: "Playlist Script";
+    font-family: "Playlist Script";
 }
   
-
-
-#results-nav-cluster {
+#nav-cluster {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     padding: 1.5em;
-    
-
 
 }
 
-#nav-bar {
-    display: inline-flex;
+#user-favorites-list {
+    padding-left: 0;
+}
 
+.favorites-section {
+    padding-bottom: 50px;
+}
+
+button {
+    margin-bottom: 35px;
 }
 
 h3 {
@@ -146,10 +128,9 @@ h3 {
 p {
     font-family: "Roboto";
     font-weight: 400;
-    letter-spacing: -1px;
+    font-size: 17px;
 }
 
 ul {
     list-style-type: none;
 }
-

@@ -1,14 +1,13 @@
 import listOfBars from '../data/bar-list.js';
 import { findById } from '../common/utils.js';
+// 
 
 
 let userPreferences = JSON.parse(localStorage.getItem('preference'));
 
 const searchParam = new URLSearchParams(window.location.search);
-const districtId = searchParam.get('id');
-
-// let userDistrict = JSON.parse(localStorage.getItem('district'));  
-
+const districtId = searchParam.get('id');  
+console.log(districtId);
 let userPreferenceFilteredArray = []; 
 let arrayToDisplay = []; 
 
@@ -26,7 +25,8 @@ for (let i = 0; i < userPreferences.length; i++) {	//
     });
 }
 
-console.log(userPreferenceFilteredArray);
+
+
 
 userPreferenceFilteredArray.forEach(bar => {
     if(bar.district === districtId) {
@@ -34,20 +34,31 @@ userPreferenceFilteredArray.forEach(bar => {
     }
 });
 
-console.log(arrayToDisplay)
-
-
-
 let favoritesArray = localStorage.getItem('favorites');
 
-if (favoritesArray === null) {
+if(favoritesArray === null) {
     favoritesArray = [];
 } else {
     favoritesArray = JSON.parse(localStorage.getItem('favorites'));
 }
 
 
+
+let cool = 
+'../assets/street_images/' + districtId + '.jpg'; 
+
+let districtHeading = document.getElementById('district-location');
+
+const img = document.createElement('img');
+img.src = cool; 
+
+districtHeading.appendChild(img); 
+
+
 const resultsUl = document.getElementById('results-list');
+
+
+
 
 arrayToDisplay.forEach(bar => {
 
@@ -62,6 +73,14 @@ arrayToDisplay.forEach(bar => {
     const resultFood = document.createElement('li');
     const resultLiquor = document.createElement('li');
     const addToFavoritesButton = document.createElement('button');
+   
+    const favoritable = {
+        beer: resultBeer,
+        food: resultFood,
+        liquor: resultLiquor
+
+    };
+    
 
     resultLi.textContent = thisBar.name;
     resultLi.id = thisBar.id;
@@ -79,11 +98,13 @@ arrayToDisplay.forEach(bar => {
 
     resultBeer.textContent = thisBar.beer;
     resultBeer.id = `${thisBar.id}-beer`;
-
+    
     resultFood.textContent = thisBar.food;
+    // resultFood.classList.add('food');
     resultFood.id = `${thisBar.id}-food`;
 
     resultLiquor.textContent = thisBar.liquor;
+    // resultLiquor.classList.add('liquor');
     resultLiquor.id = `${thisBar.id}-liquor`;
 
     addToFavoritesButton.textContent = 'Add to Favorites';
@@ -92,14 +113,25 @@ arrayToDisplay.forEach(bar => {
     addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;	
     addToFavoritesButton.addEventListener('click', function() {
 
-        if (!findById(favoritesArray, thisBar.id)) {	
+        if(!findById(favoritesArray, thisBar.id)) {	
             let found = findById(listOfBars, thisBar.id);
+            thisBar.favorite = true;
             favoritesArray.push(found);
             localStorage.setItem('favorites', JSON.stringify(favoritesArray));
         } else {
             return;		
         }	
     });
+
+    console.log(userPreferences)
+    for(let i = 0; i < userPreferences.length; i++) {
+        let boldedPreference = userPreferences[i];
+
+        if(favoritable[boldedPreference]){
+            favoritable[boldedPreference].classList.add('favorite');
+        } 
+    }
+
 
     addToFavoritesButton.id = 'add-to-favorites';
 
@@ -109,17 +141,19 @@ arrayToDisplay.forEach(bar => {
     resultHours.appendChild(resultDays);
     resultLi.appendChild(resultMenu);
 
-    if (resultLiquor.innerText) {
+    if(resultLiquor.innerText) {
         resultMenu.appendChild(resultLiquor);
     } 
 
-    if (resultBeer.innerText) {
+    if(resultBeer.innerText) {
         resultMenu.appendChild(resultBeer);
     }
 
-    if (resultFood.innerText) {
+    if(resultFood.innerText) {
         resultMenu.appendChild(resultFood);
     }
     
     resultLi.appendChild(addToFavoritesButton);
+
 });
+

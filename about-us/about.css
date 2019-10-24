@@ -1,6 +1,9 @@
 .team-list {
+    padding-left: 0;
     display: flex;
-    width: 960px;
+    width: 100vw;
+    flex-direction: column;
+    letter-spacing: 0px;
 }
 
 .team-list li {
