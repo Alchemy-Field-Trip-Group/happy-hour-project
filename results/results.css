@@ -3,7 +3,10 @@
     src: url("./assets/Playlist-Script.otf") format("opentype");
   }
 
-
+  img{
+    width: 90vw;
+    height: auto;  
+}
 ul#results-list li {
     margin-bottom: 15px;
 }
@@ -128,3 +131,4 @@ p {
 ul {
     list-style-type: none;
 }
+
