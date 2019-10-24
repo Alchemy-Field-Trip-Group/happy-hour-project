@@ -115,3 +115,22 @@ p {
     letter-spacing: -1px;
 }
 
+ul {
+    list-style-type: none;
+}
+
+.team-list {
+    display: flex;
+    flex-direction: column;;
+    width: 100vw;
+}
+
+.team-list li {
+    list-style-type: none;
+    padding: 0 15px;
+}
+
+.team-list li img {
+    width: 200px;
+    border-radius: 100px;
+}
