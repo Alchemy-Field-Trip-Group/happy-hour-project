@@ -5,7 +5,8 @@
 
 body {
     height: 100vh;
-    padding: 25px;
+    padding: 0 25px;
+    margin: 0;
     text-align: center;
     background-color:#fffd48;
     font-family: "Roboto";
