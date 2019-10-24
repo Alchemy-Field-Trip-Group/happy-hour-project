@@ -33,19 +33,19 @@ const albertaMap = {
 };
 
 const stJohnsMap = {
-    name: 'StJohns',
+    name: 'St Johns',
     top: '25%',
     left: '15%'
 };
 
 const nWMap = {
-    name: 'Northwest',
+    name: 'NW Portland',
     top: '48%',
     left: '27%'
 };
 
 const pearlDistrictMap = {
-    name: 'Pearl',
+    name: 'Pearl District',
     top: '53%',
     left: '33%'
 };
