@@ -55,12 +55,6 @@ img.src = cool;
 districtHeading.appendChild(img); 
 
 
-
-console.log (cool);
-
-
-
-
 const resultsUl = document.getElementById('results-list');
 
 
@@ -129,17 +123,13 @@ arrayToDisplay.forEach(bar => {
         }	
     });
 
-
+    console.log(userPreferences)
     for(let i = 0; i < userPreferences.length; i++) {
         let boldedPreference = userPreferences[i];
 
         if(favoritable[boldedPreference]){
             favoritable[boldedPreference].classList.add('favorite');
-        } else if(!favoritable[boldedPreference]) {
-            favoritable[boldedPreference].style.display = 'none';
-
-        }
-        console.log(boldedPreference);
+        } 
     }
 
 
