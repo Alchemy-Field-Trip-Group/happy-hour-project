@@ -2,12 +2,12 @@ import { saveUser, loadUser } from './load-save-user.js';
 import { makeUser } from './makeuser.js';
 
 const form = document.querySelector('form');
-const register = document.getElementById('register');
+const login = document.getElementById('login');
 const userInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 let users = [];
 
-register.addEventListener('click', (event) => {
+login.addEventListener('click', (event) => {
     event.preventDefault();
     if(userInput.value === '' || passwordInput.value === '') {
         userInput.setCustomValidity('please fill out both');

@@ -24,7 +24,6 @@ logInButton.addEventListener('click', (event) => {
 export const generateUserName = () => {
     const userNameDisplay = JSON.parse(localStorage.getItem('username'));
     return userNameDisplay;
-    
 };
 
 // export default generateUserName;
