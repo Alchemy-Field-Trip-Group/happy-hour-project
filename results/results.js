@@ -41,19 +41,16 @@ if (favoritesArray === null) {
 
 
 
-let cool = 
+let headerImage = 
 '../assets/street_images/' + districtId + '.jpg'; 
 
 let districtHeading = document.getElementById('district-location');
 
 const img = document.createElement('img');
-img.src = cool; 
+img.src = headerImage; 
 
 districtHeading.appendChild(img); 
 
-
-
-console.log (cool);
 
 
 
@@ -68,7 +65,9 @@ arrayToDisplay.forEach(bar => {
     let thisBar = bar;
 
     const resultLi = document.createElement('li');
+
     const resultAddress = document.createElement('p');
+
     const resultHours = document.createElement('span');
     const resultDays = document.createElement('span');
     const resultMenu = document.createElement('ul');
@@ -76,7 +75,13 @@ arrayToDisplay.forEach(bar => {
     const resultFood = document.createElement('li');
     const resultLiquor = document.createElement('li');
     const addToFavoritesButton = document.createElement('button');
-   
+
+  
+
+
+
+    const addDirectionLink = document.createElement('button'); 
+
     
 
     resultLi.textContent = thisBar.name;
@@ -104,8 +109,12 @@ arrayToDisplay.forEach(bar => {
 
     addToFavoritesButton.textContent = 'Add to Favorites';
 
+    addDirectionLink.textContent = 'Directions to the bar!'; 
+
     addToFavoritesButton.id = 'add-to-favorites';
     addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;	
+
+
     addToFavoritesButton.addEventListener('click', function() {
 
         if (!findById(favoritesArray, thisBar.id)) {	
@@ -118,6 +127,11 @@ arrayToDisplay.forEach(bar => {
         }	
     });
 
+    let barAddress = resultAddress.textContent; 
+
+    addDirectionLink.addEventListener('click', function() {
+        window.location.href = 'https://www.google.com/maps/dir/Alchemy+Code+Lab,+Northwest+10th+Avenue,+Portland,+OR/ +' + barAddress ;
+    }); 
 
     addToFavoritesButton.id = 'add-to-favorites';
 
@@ -139,7 +153,9 @@ arrayToDisplay.forEach(bar => {
         resultMenu.appendChild(resultFood);
     }
     
-    resultLi.appendChild(addToFavoritesButton);
+    resultLi.appendChild(addToFavoritesButton); 
+    resultLi.appendChild(addDirectionLink)
+    ;
 
 });
 
