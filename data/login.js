@@ -1,5 +1,5 @@
 // import { saveUser, loadUser } from 'login/load-save-user.js';
-import { makeUser } from '/common/utils.js';
+import { makeUser } from './common/utils.js';
 
 const form = document.querySelector('form');
 const logInButton = document.getElementById('login-button');
@@ -17,7 +17,7 @@ logInButton.addEventListener('click', (event) => {
     
         JSON.stringify(localStorage.setItem('email', createdUser.email));
         
-        window.location = '/preferences/preferences.html';
+        window.location = './preferences/preferences.html';
     }
 });
 
