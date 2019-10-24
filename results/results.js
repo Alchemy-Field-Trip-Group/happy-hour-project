@@ -1,13 +1,10 @@
 import listOfBars from '../data/bar-list.js';
 import { findById } from '../common/utils.js';
 
-
 let userPreferences = JSON.parse(localStorage.getItem('preference'));
 
 const searchParam = new URLSearchParams(window.location.search);
 const districtId = searchParam.get('id');
-
-// let userDistrict = JSON.parse(localStorage.getItem('district'));  
 
 let userPreferenceFilteredArray = []; 
 let arrayToDisplay = []; 
@@ -26,17 +23,11 @@ for (let i = 0; i < userPreferences.length; i++) {	//
     });
 }
 
-console.log(userPreferenceFilteredArray);
-
 userPreferenceFilteredArray.forEach(bar => {
-    if(bar.district === districtId) {
+    if (bar.district === districtId) {
         arrayToDisplay.push(bar);
     }
 });
-
-console.log(arrayToDisplay)
-
-
 
 let favoritesArray = localStorage.getItem('favorites');
 
@@ -45,7 +36,6 @@ if (favoritesArray === null) {
 } else {
     favoritesArray = JSON.parse(localStorage.getItem('favorites'));
 }
-
 
 const resultsUl = document.getElementById('results-list');
 
