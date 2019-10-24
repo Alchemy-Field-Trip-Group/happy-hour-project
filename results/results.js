@@ -5,17 +5,17 @@ let userPreferences = JSON.parse(localStorage.getItem('preference'));
 
 const searchParam = new URLSearchParams(window.location.search);
 const districtId = searchParam.get('id');  
-console.log(typeof districtId)
+console.log(typeof districtId);
 let userPreferenceFilteredArray = []; 
 let arrayToDisplay = []; 
 
 
-for(let i = 0; i < userPreferences.length; i++) {	//  
+for (let i = 0; i < userPreferences.length; i++) {	//  
     let filteredPreference = userPreferences[i];
 
     listOfBars.forEach(bar => {
         // eslint-disable-next-line eqeqeq
-        if(bar[filteredPreference] && userPreferenceFilteredArray.indexOf(bar) == -1) {
+        if (bar[filteredPreference] && userPreferenceFilteredArray.indexOf(bar) == -1) {
             userPreferenceFilteredArray.push(bar);
             return true;
         }
@@ -31,13 +31,13 @@ userPreferenceFilteredArray.forEach(bar => {
 
 let favoritesArray = localStorage.getItem('favorites');
 
-if(favoritesArray === null) {
+if (favoritesArray === null) {
     favoritesArray = [];
 } else {
     favoritesArray = JSON.parse(localStorage.getItem('favorites'));
 }
 
-console.log(favoritesArray)
+console.log(favoritesArray);
 const districtHeading = document.getElementById('district-location');
 districtHeading.textContent = districtId;
 const resultsUl = document.getElementById('results-list');
@@ -82,7 +82,6 @@ arrayToDisplay.forEach(bar => {
     resultLiquor.id = `${thisBar.id}-liquor`;
 
     addToFavoritesButton.textContent = 'Add to Favorites';
-    debugger;
     if (thisBar.favorite === true) {
         addToFavoritesButton.style.backgroundColor = '#FF0000';
     }
@@ -91,7 +90,7 @@ arrayToDisplay.forEach(bar => {
     addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;	
     addToFavoritesButton.addEventListener('click', function() {
 
-        if(!findById(favoritesArray, thisBar.id)) {	
+        if (!findById(favoritesArray, thisBar.id)) {	
             let found = findById(listOfBars, thisBar.id);
             thisBar.favorite = true;
             favoritesArray.push(found);
@@ -111,15 +110,15 @@ arrayToDisplay.forEach(bar => {
     resultHours.appendChild(resultDays);
     resultLi.appendChild(resultMenu);
 
-    if(resultLiquor.innerText) {
+    if (resultLiquor.innerText) {
         resultMenu.appendChild(resultLiquor);
     } 
 
-    if(resultBeer.innerText) {
+    if (resultBeer.innerText) {
         resultMenu.appendChild(resultBeer);
     }
 
-    if(resultFood.innerText) {
+    if (resultFood.innerText) {
         resultMenu.appendChild(resultFood);
     }
     

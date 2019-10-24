@@ -1,6 +1,7 @@
 figure {
-    background-image: url("./fullsizeoutput_9ab.jpeg"); 
+    background-image: url("../assets/happyHRpdxMap.jpg"); 
     background-repeat: no-repeat;
+    background-size: cover; 
     width: 700px;
     height: 900px;
     margin: 0 auto;
@@ -11,4 +12,7 @@ figure {
     color: white;
     position: absolute;
 }
-
+img{
+    height: 30px;
+    width: auto; 
+}
