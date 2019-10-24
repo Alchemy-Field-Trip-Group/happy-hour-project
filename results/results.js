@@ -1,5 +1,6 @@
 import listOfBars from '../data/bar-list.js';
 import { findById } from '../common/utils.js';
+// 
 
 let userPreferences = JSON.parse(localStorage.getItem('preference'));
 
@@ -124,5 +125,31 @@ arrayToDisplay.forEach(bar => {
     
     resultLi.appendChild(addToFavoritesButton);
 
-    
 });
+
+// import { mapNames } from '../map/map.js'; 
+
+
+// function generateHeaderImage(district) {
+//     let link = document.createElement('a');
+
+//     const img = document.createElement('img');
+     
+//     link.classList.add('maplink');
+
+//     link.href = '../results/?id=' + district.name;
+
+//     img.setAttribute('src', '../assets/street_images/' + district.name + '.jpg'); 
+//     link.appendChild(img); 
+
+
+//     return link;
+// }
+
+// const figure = document.querySelector('h2');
+
+// for (let i = 0; i < mapNames.length; i++) {
+//     let item = generateHeaderImage(mapNames[i]);
+//     figure.appendChild(item);
+
+// }

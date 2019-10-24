@@ -1,11 +1,3 @@
-function loadUserPreferecePage() {
-    window.location = '../preferences/preferences.html'; 
-}
-
-document.getElementById('preferences-button').addEventListener('click', function(event) {
-    event.preventDefault(); 
-    loadUserPreferecePage();
-}); 
 
 
 const hawethorneMap = {
@@ -56,7 +48,7 @@ const mississippi = {
     left: '38%'
 };
 
-const mapNames = [
+export const mapNames = [
     hawethorneMap,
     belmontMap, 
     divisionMap,
@@ -113,6 +105,14 @@ sendIt();
 
 
 
+function loadUserPreferecePage() {
+    window.location = '../preferences/preferences.html'; 
+}
+
+document.getElementById('preferences-button').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    loadUserPreferecePage();
+}); 
 
 
 
