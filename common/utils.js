@@ -11,7 +11,7 @@ export const findById = (array, id) => {
 export function makeUser(formData) {
     const user = {
         username: formData.get('username'),
-        password: formData.get('password')
+        email: formData.get('email')
     };
     return user;
 }

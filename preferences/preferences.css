@@ -5,7 +5,8 @@
 
 body {
     height: 100vh;
-    padding: 25px;
+    padding: 0 25px;
+    margin: 0;
     text-align: center;
     background-color:#fffd48;
     font-family: "Roboto";
@@ -43,13 +44,21 @@ h2 {
     font-size: 28px;
     display: block;
     text-align: left;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] + p:before {
+    content: 'x';
+    color: red;
+}
+
+input[type="checkbox"]:checked + p:before {
+    content: '✓';
+    color: black;
 }
 
 input[type="checkbox"]:checked + p {
-    color: #ffffff;
-    border-radius: 5px;
-    background: black;
+    
 }
 
 .preference-check-section label p {
@@ -58,5 +67,5 @@ input[type="checkbox"]:checked + p {
 }
 
 .preference-check-section input[type ="checkbox"] {
-    opacity: 0;
+    display: none;
 }
