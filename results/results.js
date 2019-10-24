@@ -32,8 +32,6 @@ userPreferenceFilteredArray.forEach(bar => {
     }
 });
 
-console.log(arrayToDisplay)
-
 
 
 let favoritesArray = localStorage.getItem('favorites');
@@ -43,6 +41,8 @@ if (favoritesArray === null) {
 } else {
     favoritesArray = JSON.parse(localStorage.getItem('favorites'));
 }
+
+console.log(favoritesArray)
 const districtHeading = document.getElementById('district-location');
 districtHeading.textContent = districtId;
 const resultsUl = document.getElementById('results-list');
@@ -60,6 +60,8 @@ arrayToDisplay.forEach(bar => {
     const resultFood = document.createElement('li');
     const resultLiquor = document.createElement('li');
     const addToFavoritesButton = document.createElement('button');
+   
+    
 
     resultLi.textContent = thisBar.name;
     resultLi.id = thisBar.id;
@@ -85,19 +87,26 @@ arrayToDisplay.forEach(bar => {
     resultLiquor.id = `${thisBar.id}-liquor`;
 
     addToFavoritesButton.textContent = 'Add to Favorites';
+    debugger;
+    if (thisBar.favorite === true) {
+        addToFavoritesButton.style.backgroundColor = '#FF0000';
+    }
 
     addToFavoritesButton.id = 'add-to-favorites';
     addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;	
     addToFavoritesButton.addEventListener('click', function() {
 
-        if (!findById(favoritesArray, thisBar.id)) {	
+        if(!findById(favoritesArray, thisBar.id)) {	
             let found = findById(listOfBars, thisBar.id);
+            thisBar.favorite = true;
             favoritesArray.push(found);
             localStorage.setItem('favorites', JSON.stringify(favoritesArray));
+            addToFavoritesButton.style.backgroundColor = '#FF0000';
         } else {
             return;		
         }	
     });
+
 
     addToFavoritesButton.id = 'add-to-favorites';
 
@@ -120,4 +129,6 @@ arrayToDisplay.forEach(bar => {
     }
     
     resultLi.appendChild(addToFavoritesButton);
+
+    
 });
