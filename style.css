@@ -1,17 +1,33 @@
+@font-face {
+  font-family: "Playlist Script";
+  src: url("./assets/Playlist-Script.otf") format("opentype");
+}
+
+
+html {
+    background-color: white;
+    height: 100%;
+}
+
 body {
+    margin:0;
+    width: 100vw;
     display: flex;
+    font-family: "Roboto";
+    font-weight: 400;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: salmon;
-    width: 700px;
+    background-color:#fffd48;
     height: 100%;
-    margin: 0 auto;
+
+    
 }
-html {
-    background-color: white;
-    height: 100%;
+
+h1, h2 {
+    font-family: "Roboto";
+    font-weight: 700;
 }
 
 form {
@@ -30,4 +46,12 @@ header {
 }
 input {
     border: 0px 2px 0px 0px;
+}
+
+.header-backtround {
+
+}
+
+.hr-in-logo {
+    font-family: "Playlist Script";
 }
