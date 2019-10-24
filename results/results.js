@@ -129,6 +129,8 @@ arrayToDisplay.forEach(bar => {
 
     let barAddress = resultAddress.textContent; 
 
+    // addDirectionLink.style.color = blue; 
+
     addDirectionLink.addEventListener('click', function() {
         window.location.href = 'https://www.google.com/maps/dir/Alchemy+Code+Lab,+Northwest+10th+Avenue,+Portland,+OR/ +' + barAddress ;
     }); 
