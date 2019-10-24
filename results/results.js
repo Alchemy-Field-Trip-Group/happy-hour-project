@@ -82,9 +82,6 @@ arrayToDisplay.forEach(bar => {
     resultLiquor.id = `${thisBar.id}-liquor`;
 
     addToFavoritesButton.textContent = 'Add to Favorites';
-    if (thisBar.favorite === true) {
-        addToFavoritesButton.style.backgroundColor = '#FF0000';
-    }
 
     addToFavoritesButton.id = 'add-to-favorites';
     addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;	
@@ -95,7 +92,6 @@ arrayToDisplay.forEach(bar => {
             thisBar.favorite = true;
             favoritesArray.push(found);
             localStorage.setItem('favorites', JSON.stringify(favoritesArray));
-            addToFavoritesButton.style.backgroundColor = '#FF0000';
         } else {
             return;		
         }	
