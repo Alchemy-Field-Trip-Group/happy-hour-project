@@ -11,13 +11,13 @@
 <body>
     <h1>preferences</h1>
     <h2>What kind of things do you want in your night?</h2>
-    
-        <input type="checkbox" id="food" checked>Food?</input>
-        <input type="checkbox" id="beer" checked>Beer?</input>
-        <input type="checkbox" id="liquor" checked>Liquor?</input>
-        <input type="checkbox" id="dateNight" checked>Date Night?</input>
-    
-    <button id='map-button'>Go To The Map!</button>
+    <section class="preference-check-section">
+        <label><input type="checkbox" id="food" checked><p>Food?</p></label>
+        <label><input type="checkbox" id="beer" checked><p>Beer?</p></label>
+        <label><input type="checkbox" id="liquor" checked><p>Liquor?</p></label>
+        <label><input type="checkbox" id="dateNight" checked><p>Date Night?</p></label>
+    </section>
+    <button id='map-button'>Go To Map</button>
     <!-- <p>Please note: When you "uncheck" an item on the list, if there is a bar with only that item, it will remove that entirely from the list of options (example: If you uncheck a bar that only offers beer, it will remove that bar entirely from your result options). On the other hand, if you uncheck an item and that bar has several options, it might not remove a bar from the list you thought (example: Removing "food" might not remove a bar that serves food more than that). </p>
     <p> Here is an example of what each item for happy hour will look like:</p>
     <h3>Pope House Bourbon Lounge</h3> 
