@@ -5,10 +5,8 @@ import { findById } from '../common/utils.js';
 let userPreferences = JSON.parse(localStorage.getItem('preference'));
 
 const searchParam = new URLSearchParams(window.location.search);
-const districtId = searchParam.get('id');
-
-// let userDistrict = JSON.parse(localStorage.getItem('district'));  
-
+const districtId = searchParam.get('id');  
+console.log(typeof districtId)
 let userPreferenceFilteredArray = []; 
 let arrayToDisplay = []; 
 
@@ -45,8 +43,8 @@ if (favoritesArray === null) {
 } else {
     favoritesArray = JSON.parse(localStorage.getItem('favorites'));
 }
-
-
+const districtHeading = document.getElementById('district-location');
+districtHeading.textContent = districtId;
 const resultsUl = document.getElementById('results-list');
 
 arrayToDisplay.forEach(bar => {
