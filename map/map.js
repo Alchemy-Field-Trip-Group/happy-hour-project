@@ -33,7 +33,7 @@ const albertaMap = {
 };
 
 const stJohnsMap = {
-    name: 'St Johns',
+    name: 'StJohns',
     top: '25%',
     left: '15%'
 };
