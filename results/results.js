@@ -2,11 +2,12 @@ import listOfBars from '../data/bar-list.js';
 import { findById } from '../common/utils.js';
 // 
 
+
 let userPreferences = JSON.parse(localStorage.getItem('preference'));
 
 const searchParam = new URLSearchParams(window.location.search);
 const districtId = searchParam.get('id');  
-console.log(typeof districtId);
+console.log(districtId);
 let userPreferenceFilteredArray = []; 
 let arrayToDisplay = []; 
 
@@ -38,10 +39,29 @@ if (favoritesArray === null) {
     favoritesArray = JSON.parse(localStorage.getItem('favorites'));
 }
 
-console.log(favoritesArray);
-const districtHeading = document.getElementById('district-location');
-districtHeading.textContent = districtId;
+
+
+let cool = 
+'../assets/street_images/' + districtId + '.jpg'; 
+
+let districtHeading = document.getElementById('district-location');
+
+const img = document.createElement('img');
+img.src = cool; 
+
+districtHeading.appendChild(img); 
+
+
+
+console.log (cool);
+
+
+
+
 const resultsUl = document.getElementById('results-list');
+
+
+
 
 arrayToDisplay.forEach(bar => {
 
@@ -123,29 +143,3 @@ arrayToDisplay.forEach(bar => {
 
 });
 
-// import { mapNames } from '../map/map.js'; 
-
-
-// function generateHeaderImage(district) {
-//     let link = document.createElement('a');
-
-//     const img = document.createElement('img');
-     
-//     link.classList.add('maplink');
-
-//     link.href = '../results/?id=' + district.name;
-
-//     img.setAttribute('src', '../assets/street_images/' + district.name + '.jpg'); 
-//     link.appendChild(img); 
-
-
-//     return link;
-// }
-
-// const figure = document.querySelector('h2');
-
-// for (let i = 0; i < mapNames.length; i++) {
-//     let item = generateHeaderImage(mapNames[i]);
-//     figure.appendChild(item);
-
-// }
