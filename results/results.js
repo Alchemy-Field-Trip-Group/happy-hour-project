@@ -25,6 +25,9 @@ for (let i = 0; i < userPreferences.length; i++) {	//
     });
 }
 
+
+
+
 userPreferenceFilteredArray.forEach(bar => {
     if (bar.district === districtId) {
         arrayToDisplay.push(bar);
@@ -50,9 +53,6 @@ const img = document.createElement('img');
 img.src = headerImage; 
 
 districtHeading.appendChild(img); 
-
-
-
 
 
 const resultsUl = document.getElementById('results-list');
@@ -82,6 +82,13 @@ arrayToDisplay.forEach(bar => {
 
     const addDirectionLink = document.createElement('button'); 
 
+   
+    const favoritable = {
+        beer: resultBeer,
+        food: resultFood,
+        liquor: resultLiquor
+
+    };
     
 
     resultLi.textContent = thisBar.name;
@@ -100,11 +107,13 @@ arrayToDisplay.forEach(bar => {
 
     resultBeer.textContent = thisBar.beer;
     resultBeer.id = `${thisBar.id}-beer`;
-
+    
     resultFood.textContent = thisBar.food;
+    // resultFood.classList.add('food');
     resultFood.id = `${thisBar.id}-food`;
 
     resultLiquor.textContent = thisBar.liquor;
+    // resultLiquor.classList.add('liquor');
     resultLiquor.id = `${thisBar.id}-liquor`;
 
     addToFavoritesButton.textContent = 'Add to Favorites';
@@ -134,6 +143,15 @@ arrayToDisplay.forEach(bar => {
     addDirectionLink.addEventListener('click', function() {
         window.location.href = 'https://www.google.com/maps/dir/Alchemy+Code+Lab,+Northwest+10th+Avenue,+Portland,+OR/ +' + barAddress ;
     }); 
+    console.log(userPreferences);
+    for (let i = 0; i < userPreferences.length; i++) {
+        let boldedPreference = userPreferences[i];
+
+        if (favoritable[boldedPreference]){
+            favoritable[boldedPreference].classList.add('favorite');
+        } 
+    }
+
 
     addToFavoritesButton.id = 'add-to-favorites';
 
