@@ -4,22 +4,18 @@ import { makeUser } from '/common/utils.js';
 const form = document.querySelector('form');
 const logInButton = document.getElementById('login-button');
 const userName = document.getElementById('username');
-const password = document.getElementById('password');
+const email = document.getElementById('email');
 
 logInButton.addEventListener('click', (event) => {
     event.preventDefault();
-    if(password.value === '' || userName.value === ''){
+    if(email.value === '' || userName.value === ''){
         return;
     } else {
         const formData = new FormData(form);
-    
         const createdUser = makeUser(formData);
-    
-        console.log(createdUser);
-    
         JSON.stringify(localStorage.setItem('username', createdUser.username));
     
-        JSON.stringify(localStorage.setItem('password', createdUser.password));
+        JSON.stringify(localStorage.setItem('email', createdUser.email));
         
         window.location = '/preferences/preferences.html';
     }

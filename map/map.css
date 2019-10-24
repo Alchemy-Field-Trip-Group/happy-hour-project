@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 figure {
     background-image: url("../assets/16x9Map.jpg");
     background-repeat: no-repeat;

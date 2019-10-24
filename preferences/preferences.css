@@ -43,13 +43,11 @@ h2 {
     font-size: 28px;
     display: block;
     text-align: left;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 input[type="checkbox"]:checked + p {
-    color: #ffffff;
-    border-radius: 5px;
-    background: black;
+    box-shadow: inset 0 -5px 0 black;
 }
 
 .preference-check-section label p {
@@ -58,5 +56,5 @@ input[type="checkbox"]:checked + p {
 }
 
 .preference-check-section input[type ="checkbox"] {
-    opacity: 0;
+    display: none;
 }
