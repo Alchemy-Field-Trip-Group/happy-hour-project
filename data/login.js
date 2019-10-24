@@ -17,7 +17,7 @@ logInButton.addEventListener('click', (event) => {
 
     JSON.stringify(localStorage.setItem('password', createdUser.password));
     
-    window.location = '/map/map.html';
+    window.location = '/preferences/preferences.html';
 });
 
 

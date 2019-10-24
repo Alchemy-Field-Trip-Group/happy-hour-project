@@ -1,78 +1,55 @@
 import listOfBars from '../data/bar-list.js';
 import { findById } from '../common/utils.js';
 
-// import { districtArray } from '../data/districts.js'; 
-
-let userPreferences = JSON.parse(localStorage.getItem('preference')); 
 
 let userPreferences = JSON.parse(localStorage.getItem('preference'));
+
+const searchParam = new URLSearchParams(window.location.search);
+const districtId = searchParam.get('id');
+
 // let userDistrict = JSON.parse(localStorage.getItem('district'));  
 
 let userPreferenceFilteredArray = []; 
-// let chosenDistrictArray = []; 
+let arrayToDisplay = []; 
 
 
-// for (let i = 0; i < userPreferences.length; i++) {	//  
-//     let filteredPreference = userPreferences[i];
+for (let i = 0; i < userPreferences.length; i++) {	//  
+    let filteredPreference = userPreferences[i];
 
     listOfBars.forEach(bar => {
-        if (bar[filteredPreference]) {
-            return; }
-           
-            userPreferenceFilteredArray.push(bar); 
-            
-        
-    } 
+        // eslint-disable-next-line eqeqeq
+        if (bar[filteredPreference] && userPreferenceFilteredArray.indexOf(bar) == -1) {
+            userPreferenceFilteredArray.push(bar);
+            return true;
+        }
+        return false;
+    });
+}
+
+console.log(userPreferenceFilteredArray);
+
+userPreferenceFilteredArray.forEach(bar => {
+    if(bar.district === districtId) {
+        arrayToDisplay.push(bar);
+    }
 });
-console.log(userPreferenceFilteredArray); 
 
-
-// userPreferenceFilteredArray.forEach(bar => {
-//     if (bar.district[userDistrict]) {
-//         chosenDistrictArray.push(bar); 
-//     }
-// }); 
-
-// console.log(userPreferenceFilteredArray); 
-
-// console.log(chosenDistrictArray);
-
-
-
-
-
-//     listOfBars.forEach(bar => {
-//         if (bar[filteredPreference]) {
-//             userPreferenceFilteredArray.push(bar);
-//         }
-//     });
-// }
-
-
-
-// userPreferenceFilteredArray.forEach(bar => {
-//     if (bar.district[radioButtonValue]) {
-//         chosenDistrictArray.push(bar); 
-//     }
-// }); 
-
-// console.log(chosenDistrictArray);
+console.log(arrayToDisplay)
 
 
 
 let favoritesArray = localStorage.getItem('favorites');
 
-if(favoritesArray === null) {
+if (favoritesArray === null) {
     favoritesArray = [];
 } else {
     favoritesArray = JSON.parse(localStorage.getItem('favorites'));
 }
-console.log(favoritesArray)
 
 
 const resultsUl = document.getElementById('results-list');
 
-listOfBars.forEach(bar => {
+arrayToDisplay.forEach(bar => {
 
     let thisBar = bar;
 
@@ -115,7 +92,7 @@ listOfBars.forEach(bar => {
     addToFavoritesButton.id = `${thisBar.id}-add-to-favorites`;	
     addToFavoritesButton.addEventListener('click', function() {
 
-        if(!findById(favoritesArray, thisBar.id)) {	
+        if (!findById(favoritesArray, thisBar.id)) {	
             let found = findById(listOfBars, thisBar.id);
             favoritesArray.push(found);
             localStorage.setItem('favorites', JSON.stringify(favoritesArray));
@@ -123,6 +100,7 @@ listOfBars.forEach(bar => {
             return;		
         }	
     });
+
     addToFavoritesButton.id = 'add-to-favorites';
 
     resultsUl.appendChild(resultLi);
@@ -130,8 +108,18 @@ listOfBars.forEach(bar => {
     resultLi.appendChild(resultHours);
     resultHours.appendChild(resultDays);
     resultLi.appendChild(resultMenu);
-    resultMenu.appendChild(resultBeer);
-    resultMenu.appendChild(resultFood);
-    resultMenu.appendChild(resultLiquor);
+
+    if (resultLiquor.innerText) {
+        resultMenu.appendChild(resultLiquor);
+    } 
+
+    if (resultBeer.innerText) {
+        resultMenu.appendChild(resultBeer);
+    }
+
+    if (resultFood.innerText) {
+        resultMenu.appendChild(resultFood);
+    }
+    
     resultLi.appendChild(addToFavoritesButton);
 });
