@@ -6,11 +6,13 @@ import { findById } from '../common/utils.js';
 let userPreferences = JSON.parse(localStorage.getItem('preference')); 
 
 
+const searchParam = new URLSearchParams(window.location.search);
+const districtId = searchParam.get('id');
 
 // let userDistrict = JSON.parse(localStorage.getItem('district'));  
 
 let userPreferenceFilteredArray = []; 
-// let chosenDistrictArray = []; 
+let arrayToDisplay = []; 
 
 
 for(let i = 0; i < userPreferences.length; i++) {	//  
@@ -26,6 +28,17 @@ for(let i = 0; i < userPreferences.length; i++) {	//
     });
 }
 
+console.log(userPreferenceFilteredArray);
+
+userPreferenceFilteredArray.forEach(bar => {
+    if(bar.district === districtId) {
+        arrayToDisplay.push(bar);
+    }
+});
+
+console.log(arrayToDisplay)
+
+
 
 let favoritesArray = localStorage.getItem('favorites');
 
@@ -38,7 +51,7 @@ if(favoritesArray === null) {
 
 const resultsUl = document.getElementById('results-list');
 
-userPreferenceFilteredArray.forEach(bar => {
+arrayToDisplay.forEach(bar => {
 
     let thisBar = bar;
 
