@@ -1,9 +1,10 @@
-body {
+html, body{
     margin: 0;
-}
-
+}    
 figure {
-    background-image: url("../assets/16x9Map.jpg");
+    background-image: url("../assets/16x9Map.jpg"); 
+
+
     background-repeat: no-repeat;
     background-size: cover; 
     height: 100vh;
@@ -19,4 +20,4 @@ figure {
 img{
     height: 30px;
     width: auto; 
-}
+} 
