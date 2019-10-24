@@ -17,6 +17,13 @@ body {
     align-items: center;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background: rgba(255, 253, 72, 1);
+}
+
 button {
     background-color: white;
     border: 0;
