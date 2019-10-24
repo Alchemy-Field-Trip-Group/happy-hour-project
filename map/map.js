@@ -11,7 +11,7 @@ document.getElementById('preferences-button').addEventListener('click', function
 const hawethorneMap = {
     name: 'Hawthorne',
     top: '56%',
-    left: '54%'
+    left: '54%',
 };
 
 const belmontMap = {
@@ -39,13 +39,13 @@ const stJohnsMap = {
 };
 
 const nWMap = {
-    name: 'NW Portland',
+    name: 'Northwest',
     top: '48%',
     left: '27%'
 };
 
 const pearlDistrictMap = {
-    name: 'Pearl District',
+    name: 'Pearl',
     top: '53%',
     left: '33%'
 };
@@ -67,15 +67,25 @@ const mapNames = [
     mississippi
 ];
 
+
 function generateLink(district) {
     let link = document.createElement('a');
+
+    const img = document.createElement('img');
+     
     link.classList.add('maplink');
 
     link.href = '../results/?id=' + district.name;
 
     link.style.top = district.top;
     link.style.left = district.left;
-    link.textContent = district.name;
+    // link.textContent = 
+    // district.name;
+
+
+    img.setAttribute('src', '../assets/street_images/' + district.name + '.jpg'); 
+    link.appendChild(img); 
+
 
     return link;
 }
