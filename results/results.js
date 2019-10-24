@@ -10,12 +10,12 @@ let userPreferenceFilteredArray = [];
 let arrayToDisplay = []; 
 
 
-for (let i = 0; i < userPreferences.length; i++) {	//  
+for(let i = 0; i < userPreferences.length; i++) {	//  
     let filteredPreference = userPreferences[i];
 
     listOfBars.forEach(bar => {
         // eslint-disable-next-line eqeqeq
-        if (bar[filteredPreference] && userPreferenceFilteredArray.indexOf(bar) == -1) {
+        if(bar[filteredPreference] && userPreferenceFilteredArray.indexOf(bar) == -1) {
             userPreferenceFilteredArray.push(bar);
             return true;
         }
@@ -31,7 +31,7 @@ userPreferenceFilteredArray.forEach(bar => {
 
 let favoritesArray = localStorage.getItem('favorites');
 
-if (favoritesArray === null) {
+if(favoritesArray === null) {
     favoritesArray = [];
 } else {
     favoritesArray = JSON.parse(localStorage.getItem('favorites'));
@@ -111,15 +111,15 @@ arrayToDisplay.forEach(bar => {
     resultHours.appendChild(resultDays);
     resultLi.appendChild(resultMenu);
 
-    if (resultLiquor.innerText) {
+    if(resultLiquor.innerText) {
         resultMenu.appendChild(resultLiquor);
     } 
 
-    if (resultBeer.innerText) {
+    if(resultBeer.innerText) {
         resultMenu.appendChild(resultBeer);
     }
 
-    if (resultFood.innerText) {
+    if(resultFood.innerText) {
         resultMenu.appendChild(resultFood);
     }
     
