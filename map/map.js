@@ -1,3 +1,13 @@
+function loadUserPreferecePage() {
+    window.location = '../preferences/preferences.html'; 
+}
+
+document.getElementById('preferences-button').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    loadUserPreferecePage();
+}); 
+
+
 const hawethorneMap = {
     name: 'Hawthorne',
     top: '56%',
@@ -67,20 +77,24 @@ const figure = document.querySelector('figure');
 
 for (let i = 0; i < mapNames.length; i++) {
     let item = generateLink(mapNames[i]);
-    console.log(item);
     figure.appendChild(item);
 }
 
 
 
+let sendIt = () => {
+    let selectedDistrict = document.querySelector('input:checked'); 
+
+    let selectedDistrictValue = JSON.stringify(selectedDistrict.value); 
+
+    localStorage.setItem('district', selectedDistrictValue); 
+
+};
+
+sendIt(); 
 
 
 
-let selectedDistrict = document.querySelector('input:checked'); 
-
-let selectedDistrictValue = JSON.stringify(selectedDistrict.value); 
-
-localStorage.setItem('district', selectedDistrictValue); 
 
 
-console.log(selectedDistrict.value); 
+

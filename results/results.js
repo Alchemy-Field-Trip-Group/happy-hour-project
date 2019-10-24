@@ -1,7 +1,6 @@
 import listOfBars from '../data/bar-list.js';
 import { findById } from '../common/utils.js';
 
-
 let userPreferences = JSON.parse(localStorage.getItem('preference'));
 
 const searchParam = new URLSearchParams(window.location.search);
@@ -24,15 +23,11 @@ for (let i = 0; i < userPreferences.length; i++) {	//
     });
 }
 
-console.log(userPreferenceFilteredArray);
-
 userPreferenceFilteredArray.forEach(bar => {
-    if(bar.district === districtId) {
+    if (bar.district === districtId) {
         arrayToDisplay.push(bar);
     }
 });
-
-
 
 let favoritesArray = localStorage.getItem('favorites');
 
