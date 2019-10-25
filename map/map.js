@@ -3,49 +3,55 @@
 const hawethorneMap = {
     name: 'Hawthorne',
     top: '56%',
-    left: '54%',
+    left: '75%',
 };
 
 const belmontMap = {
     name: 'Belmont',
-    top: '54%',
-    left: '58%'
+    top: '50%',
+    left: '74%'
 };
 
 const divisionMap = {
     name: 'Division',
-    top: '59%',
-    left: '56%'
+    top: '60%',
+    left: '71%'
 };
 
 const albertaMap = {
     name: 'Alberta',
     top: '41%',
-    left: '58%'
+    left: '72%'
 };
 
 const stJohnsMap = {
     name: 'St Johns',
-    top: '25%',
-    left: '15%'
+    top: '18%',
+    left: '5%'
 };
 
 const nWMap = {
     name: 'NW Portland',
-    top: '48%',
-    left: '27%'
+    top: '46%',
+    left: '33%'
 };
 
 const pearlDistrictMap = {
     name: 'Pearl District',
-    top: '53%',
-    left: '33%'
+    top: '50%',
+    left: '42%'
 };
 
 const mississippi = {
     name: 'Mississippi',
-    top: '37%',
-    left: '38%'
+    top: '36%',
+    left: '55%'
+};
+
+const downtown = {
+    name: 'Downtown',
+    top: '54.5%',
+    left: '48%'
 };
 
 export const mapNames = [
@@ -56,7 +62,8 @@ export const mapNames = [
     stJohnsMap,
     nWMap,
     pearlDistrictMap,
-    mississippi
+    mississippi,
+    downtown
 ];
 
 
@@ -75,7 +82,7 @@ function generateLink(district) {
     // district.name;
 
 
-    img.setAttribute('src', '../assets/street_images/' + district.name + '.jpg'); 
+    img.setAttribute('src', '../assets/streetBanners/' + district.name + '.jpg'); 
     link.appendChild(img); 
 
 
