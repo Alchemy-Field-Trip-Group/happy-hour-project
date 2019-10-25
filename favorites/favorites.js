@@ -12,7 +12,7 @@ userGreetingSpan.textContent = generateUserName();
 
 if(parsedFavorites.length === 0) {
     noFavsMessage.textContent = 'You haven\'t Selected Any Items To Be In Favorites!';
-}
+} 
 
 
 parsedFavorites.forEach(bar => {
