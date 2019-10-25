@@ -10,12 +10,9 @@ const userGreetingSpan = document.getElementById('generate-username');
 userGreetingSpan.textContent = generateUserName();
 
 
-
-console.log(parsedFavorites);
-
 if(parsedFavorites.length === 0) {
     noFavsMessage.textContent = 'You haven\'t Selected Any Items To Be In Favorites!';
-}
+} 
 
 
 parsedFavorites.forEach(bar => {
