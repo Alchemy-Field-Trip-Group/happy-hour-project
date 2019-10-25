@@ -30,8 +30,3 @@ document.getElementById('map-button').addEventListener('click', function(event) 
 }); 
 
 
-
-
-function loadFavorites() {
-    window.location = '../favorites/favorites.html'; 
-}
