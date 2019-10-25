@@ -124,7 +124,7 @@ arrayToDisplay.forEach(bar => {
         window.location.href = 'https://www.google.com/maps/dir/Alchemy+Code+Lab,+Northwest+10th+Avenue,+Portland,+OR/ +' + barAddress ;
     }); 
 
-    // Array and Loop to Generate the Bar Menu:
+    // Array and Loop to Generate the Bar Menu Colors:
 
     const favoritable = {
         beer: resultBeer,
