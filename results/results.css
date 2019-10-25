@@ -49,7 +49,6 @@ body {
 
 main {
     margin-top: 20px;
-    letter-spacing: 3px;
     font-family: "Roboto";
     font-weight: 700;
     display: flex;
@@ -75,14 +74,12 @@ h1 {
     font-family: "Roboto";
     font-weight: 700;
     font-size: 5em;
-    letter-spacing: 2px;
 }
 
 h2 {
     font-family: "Roboto";
     font-weight: 700;
     font-size: 2em;
-    letter-spacing: -1px;
     
 }
   
@@ -131,10 +128,7 @@ input {
 #results-nav-cluster {
     display: flex;
     justify-content: center;
-    padding: 1.5em;
     
-
-
 }
 
 #nav-bar {
@@ -146,13 +140,11 @@ h3 {
     font-family: "Roboto";
     font-weight: 400;
     font-size: 1.8em;
-    letter-spacing: -1px;
 }
 
 p {
     font-family: "Roboto";
     font-weight: 400;
-    letter-spacing: -1px;
 }
 
 ul {
