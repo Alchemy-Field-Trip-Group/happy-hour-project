@@ -35,8 +35,3 @@ document.getElementById('map-button').addEventListener('click', function(event) 
 function loadFavorites() {
     window.location = '../favorites/favorites.html'; 
 }
-
-document.getElementById('favorites-button').addEventListener('click', function(event) {
-    event.preventDefault(); 
-    loadFavorites();
-}); 
