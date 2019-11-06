@@ -1,8 +1,8 @@
 export const findById = (array, id) => {
-    for(let i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         const bar = array[i];
 
-        if(bar.id === id) {
+        if (bar.id === id) {
             return bar;
         }
     }
@@ -16,8 +16,9 @@ export function makeUser(formData) {
     return user;
 }
 
+// kind of a weird name--this is 'getting', not 'generating'
 export const generateUserName = () => {
     const userNameDisplay = localStorage.getItem('username');
     return userNameDisplay;
-    
+
 };

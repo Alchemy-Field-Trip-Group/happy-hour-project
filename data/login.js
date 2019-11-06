@@ -8,15 +8,15 @@ const email = document.getElementById('email');
 
 logInButton.addEventListener('click', (event) => {
     event.preventDefault();
-    if(email.value === '' || userName.value === ''){
-        return;
+    if (email.value === '' || userName.value === '') {
+        return; // might be a nice place to trigger form validation warnings
     } else {
         const formData = new FormData(form);
         const createdUser = makeUser(formData);
         JSON.stringify(localStorage.setItem('username', createdUser.username));
-    
+
         JSON.stringify(localStorage.setItem('email', createdUser.email));
-        
+
         window.location = './preferences/preferences.html';
     }
 });

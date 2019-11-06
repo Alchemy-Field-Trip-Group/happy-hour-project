@@ -56,7 +56,7 @@ const downtown = {
 
 export const mapNames = [
     hawethorneMap,
-    belmontMap, 
+    belmontMap,
     divisionMap,
     albertaMap,
     stJohnsMap,
@@ -71,7 +71,7 @@ function generateLink(district) {
     let link = document.createElement('a');
 
     const img = document.createElement('img');
-     
+
     link.classList.add('maplink');
 
     link.href = '../results/?id=' + district.name;
@@ -82,8 +82,8 @@ function generateLink(district) {
     // district.name;
 
 
-    img.setAttribute('src', '../assets/streetBanners/' + district.name + '.jpg'); 
-    link.appendChild(img); 
+    img.setAttribute('src', '../assets/streetBanners/' + district.name + '.jpg');
+    link.appendChild(img);
 
 
     return link;
@@ -91,6 +91,7 @@ function generateLink(district) {
 
 const figure = document.querySelector('figure');
 
+// could have been a forEach
 for (let i = 0; i < mapNames.length; i++) {
     let item = generateLink(mapNames[i]);
     figure.appendChild(item);
@@ -100,26 +101,26 @@ for (let i = 0; i < mapNames.length; i++) {
 
 
 let sendIt = () => {
-    let selectedDistrict = document.querySelector('input:checked'); 
+    let selectedDistrict = document.querySelector('input:checked');
 
-    let selectedDistrictValue = JSON.stringify(selectedDistrict.value); 
+    let selectedDistrictValue = JSON.stringify(selectedDistrict.value);
 
-    localStorage.setItem('district', selectedDistrictValue); 
+    localStorage.setItem('district', selectedDistrictValue);
 
 };
 
-sendIt(); 
+sendIt();
 
 
 
 function loadUserPreferecePage() {
-    window.location = '../preferences/preferences.html'; 
+    window.location = '../preferences/preferences.html';
 }
 
-document.getElementById('preferences-button').addEventListener('click', function(event) {
-    event.preventDefault(); 
+document.getElementById('preferences-button').addEventListener('click', function (event) {
+    event.preventDefault();
     loadUserPreferecePage();
-}); 
+});
 
 
 

@@ -1,6 +1,7 @@
 import { generateUserName } from '../common/utils.js';
 
 const favoritesUl = document.getElementById('user-favorites-list');
+// getItemsFromLocal is a little confusing, since it sounds like a function but isn't
 const getItemsFromLocal = localStorage.getItem('favorites');
 const noFavsMessage = document.getElementById('no-favorites-selected');
 
@@ -10,9 +11,9 @@ const userGreetingSpan = document.getElementById('generate-username');
 userGreetingSpan.textContent = generateUserName();
 
 
-if(parsedFavorites.length === 0) {
+if (parsedFavorites.length === 0) {
     noFavsMessage.textContent = 'You haven\'t Selected Any Items To Be In Favorites!';
-} 
+}
 
 
 parsedFavorites.forEach(bar => {
@@ -28,8 +29,20 @@ parsedFavorites.forEach(bar => {
     const favoriteFood = document.createElement('li');
     const favoriteLiqour = document.createElement('li');
     const removeFavoriteButton = document.createElement('button');
-    
-    
+
+    /* hmm this whole section feels pretty redundant. i bet there's some smart looping and a smart hash map you could have used to achieve all of this in like three lines.  
+
+    const domElements = [favoriteLineItem,
+        favoriteDistrict,
+        ...etc
+    ]
+    ['name', 'district', 'address', 'hours', 'days-open', 'menu', 'beer', 'food', 'liquor].forEach((key, i) => {
+        const domEl = domElements[i];
+          domEl.textContent = thisBar[key];
+          domEl.id = thisBar.id;
+    })
+    */
+
     favoriteLineItem.textContent = thisBar.name;
     favoriteLineItem.id = thisBar.id;
 
@@ -71,7 +84,7 @@ parsedFavorites.forEach(bar => {
     favoriteMenu.appendChild(favoriteFood);
     favoriteMenu.appendChild(favoriteLiqour);
     favoritesUl.appendChild(removeFavoriteButton);
- 
+
 
 });
 

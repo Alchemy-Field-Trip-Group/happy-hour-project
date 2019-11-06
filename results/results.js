@@ -4,20 +4,21 @@ import { findById } from '../common/utils.js';
 let userPreferences = JSON.parse(localStorage.getItem('preference'));
 
 const searchParam = new URLSearchParams(window.location.search);
-const districtId = searchParam.get('id'); 
+const districtId = searchParam.get('id');
 
 // Establish two arrays to hold filtered content:
 
-let userPreferenceFilteredArray = []; 
-let arrayToDisplay = []; 
+let userPreferenceFilteredArray = [];
+let arrayToDisplay = [];
 
 // Generate userPreferences array based off of the user preferences in local storage.
 
-for(let i = 0; i < userPreferences.length; i++) {	//  
+for (let i = 0; i < userPreferences.length; i++) {	//  
     let filteredPreference = userPreferences[i];
 
+    // eventually, this will us .filter array method
     listOfBars.forEach(bar => {
-        if(bar[filteredPreference] && userPreferenceFilteredArray.indexOf(bar) == -1) {
+        if (bar[filteredPreference] && userPreferenceFilteredArray.indexOf(bar) == -1 /* .includes would have worked here */) {
             userPreferenceFilteredArray.push(bar);
             return true;
         }
@@ -28,26 +29,27 @@ for(let i = 0; i < userPreferences.length; i++) {	//
 // Generate district specific array based on district selected from the map
 
 userPreferenceFilteredArray.forEach(bar => {
-    if(bar.district === districtId) {
+    if (bar.district === districtId) {
         arrayToDisplay.push(bar);
     }
 });
 
-let headerImage = 
-'../assets/street_images/' + districtId + '.jpg'; 
+let headerImage =
+    '../assets/street_images/' + districtId + '.jpg';
 
 let districtHeading = document.getElementById('district-location');
 
 const img = document.createElement('img');
-img.src = headerImage; 
+img.src = headerImage;
 
-districtHeading.appendChild(img); 
+districtHeading.appendChild(img);
 
 // Check to see if Favorites Array exists in local storage. If it exists, it's parsed into the favoritesArray variable and etablishes an empty array if it doesn't:
 
+// could handle this like so: let favoritesArray = localStorage.getItem('favorites') || '[]', to avoid the if else. || is how we set 'fallbacks' in javascript.
 let favoritesArray = localStorage.getItem('favorites');
 
-if(favoritesArray === null) {
+if (favoritesArray === null) {
     favoritesArray = [];
 
 } else {
@@ -73,8 +75,26 @@ arrayToDisplay.forEach(bar => {
     const resultFood = document.createElement('li');
     const resultLiquor = document.createElement('li');
     const addToFavoritesButton = document.createElement('button');
-    const addDirectionLink = document.createElement('button'); 
+    const addDirectionLink = document.createElement('button');
+
+
+    /* as in the favorites.js:
     
+    hmm this whole section feels pretty redundant. i bet there's some smart looping and a smart hash map you could have used to achieve all of this in like three lines.  
+
+    const domElements = [favoriteLineItem,
+        favoriteDistrict,
+        ...etc
+    ]
+    ['name', 'district', 'address', 'hours', 'days-open', 'menu', 'beer', 'food', 'liquor].forEach((key, i) => {
+        const domEl = domElements[i];
+          domEl.textContent = thisBar[key];
+          domEl.id = thisBar.id;
+    })
+
+    and since it looks like something like this happens in multiple files, it could probably be refactored into a function
+    */
+
     resultLi.textContent = thisBar.name;
     resultLi.id = thisBar.id;
 
@@ -91,38 +111,38 @@ arrayToDisplay.forEach(bar => {
 
     resultBeer.textContent = thisBar.beer;
     resultBeer.id = `${thisBar.id}-beer`;
-    
+
     resultFood.textContent = thisBar.food;
     resultFood.id = `${thisBar.id}-food`;
 
     resultLiquor.textContent = thisBar.liquor;
     resultLiquor.id = `${thisBar.id}-liquor`;
 
-    addDirectionLink.textContent = 'Directions to the bar!'; 
+    addDirectionLink.textContent = 'Directions to the bar!';
 
     addToFavoritesButton.id = 'add-to-favorites';
     addToFavoritesButton.textContent = 'Add to Favorites';
 
-    addToFavoritesButton.addEventListener('click', function() {
+    addToFavoritesButton.addEventListener('click', function () {
 
-        if(!findById(favoritesArray, thisBar.id)) {	
+        if (!findById(favoritesArray, thisBar.id)) {
             let found = findById(listOfBars, thisBar.id);
             thisBar.favorite = true;
             favoritesArray.push(found);
             localStorage.setItem('favorites', JSON.stringify(favoritesArray));
 
         } else {
-            return;		
-        }	
+            return;
+        }
     });
 
     // Generate The "Get Directions Button"
 
-    let barAddress = resultAddress.textContent; 
+    let barAddress = resultAddress.textContent;
 
-    addDirectionLink.addEventListener('click', function() {
-        window.location.href = 'https://www.google.com/maps/dir/Alchemy+Code+Lab,+Northwest+10th+Avenue,+Portland,+OR/ +' + barAddress ;
-    }); 
+    addDirectionLink.addEventListener('click', function () {
+        window.location.href = 'https://www.google.com/maps/dir/Alchemy+Code+Lab,+Northwest+10th+Avenue,+Portland,+OR/ +' + barAddress;
+    });
 
     // Array and Loop to Generate the Bar Menu Colors:
 
@@ -133,37 +153,38 @@ arrayToDisplay.forEach(bar => {
 
     };
 
-    for(let i = 0; i < userPreferences.length; i++) {
+    for (let i = 0; i < userPreferences.length; i++) {
         let boldedPreference = userPreferences[i];
 
-        if(favoritable[boldedPreference]){
+        if (favoritable[boldedPreference]) {
             favoritable[boldedPreference].classList.add('favorite');
-        } 
+        }
     }
 
     // Bring it all together in the DOM:
 
+    // part of me wants this reptitive stuff to happen in some kind of loop
     resultsUl.appendChild(resultLi);
-    resultLi.appendChild(resultAddress);	
+    resultLi.appendChild(resultAddress);
     resultLi.appendChild(resultHours);
     resultHours.appendChild(resultDays);
     resultLi.appendChild(resultMenu);
 
     // If any of these don't have any text content, don't show them:
-    
-    if(resultLiquor.innerText) {
-        resultMenu.appendChild(resultLiquor);
-    } 
 
-    if(resultBeer.innerText) {
+    if (resultLiquor.innerText) {
+        resultMenu.appendChild(resultLiquor);
+    }
+
+    if (resultBeer.innerText) {
         resultMenu.appendChild(resultBeer);
     }
 
-    if(resultFood.innerText) {
+    if (resultFood.innerText) {
         resultMenu.appendChild(resultFood);
     }
-    
-    resultLi.appendChild(addToFavoritesButton); 
+
+    resultLi.appendChild(addToFavoritesButton);
     resultLi.appendChild(addDirectionLink);
 
 });
